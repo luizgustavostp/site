@@ -69,7 +69,19 @@
     </span>
     </header>
     <div id="displayhamburguer">
-        <button id="quit" onclick="fodase()">⬅</button>
+        <button id="quit" onclick="fodase()"><svg width="24px" height="24px" viewBox="0 0 24 24" fill="#f4f4f4" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></button>
+        <p>conta</p>
+        <ul>
+            <li><a href="#">criar conta</a></li>
+            <li><a href="#">fazer login</a></li>
+        </ul>
+        <p>carrinho</p>
+        <ul>
+            <li><a href="#">visualizar carrinho</a></li>
+            <li><a href="#">adicionar enderereço</a></li>
+        </ul>
     </div>
     
     <main>
@@ -79,7 +91,13 @@
             <div class="perfume"><img class="perfumeimg" src="https://i.ibb.co/xSqqLDFy/vulcan-feu-250811-removebg-preview.png" alt="vulcan feu 250811 removebg preview" border="0"><h1 class="nomedoperfume">Vulkan <br> feu <button id="learnabout" >saiba mais</button></h1></div>
             <div class="arrow" id="right"><img src="imgs/arrow.svg" alt=""></div>
         </section>
-        <section class="othersec"></section>
+        <section class="othersec">
+            <select name="categorias" id="categorias">
+                <option value="masculino">masculino</option>
+                <option value="feminino">feminimo</option>
+                <option value="adocicado">adocicado</option>
+            </select>
+        </section>
     </main>
     <script src="script.js" defer></script>
 </body>
