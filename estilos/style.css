@@ -150,7 +150,7 @@ ul {
     position: fixed;
     right: 50%;
     transform: translateX(50%);
-    height: 132px;
+    height: 152px;
     background-color: rgba(255, 255, 255, 0.342);
     backdrop-filter: blur(8px);
     z-index: 2;
@@ -167,13 +167,17 @@ ul {
     display: flex;
     list-style-type: none;
     gap: 16px;
-    width: 330px;
-    z-index: 1;
-    
+    width: 100vw;
+    z-index: 0;
+    left: 0;
+
+    border-top: 1px solid rgb(122, 121, 121);
     * {
         cursor: pointer;
     }
     li {
+        margin-left: 40px;
+        margin-top: 16px;
         color: #7D7D7D;
         transition: 200ms ease;
     }
@@ -200,6 +204,9 @@ ul {
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
+    img {
+        filter: saturate(1.1)brightness(1.1);
+    }
 }
 .arrow {
     transition: 300ms ease;
@@ -275,7 +282,7 @@ body {
 div.display {
     
     align-items: start;
-    position: absolute;
+    position: fixed;
     background-color: var(--color1);
     padding: 16px;
     color: rgb(33, 33, 33);;
@@ -286,7 +293,7 @@ div.display {
     line-height: 0px;
     width: 212px;
     top:  64px;
-    z-index: 3;
+    z-index: 100;
     right: 0px;
     display: none;
     transition: 200ms;
@@ -320,6 +327,7 @@ div.display {
     top: 80px;
     right: 0px;
     padding: 8px;
+    z-index: 9999999;
     img {
         height: 40px;
         width: 40px;
@@ -426,9 +434,6 @@ svg {
     .navitem {
         scale: 0.96;
     }
-    #inputitem {
-        scale: 0.8;
-    }
 
 }
 @media (max-width:960px) {
@@ -509,6 +514,9 @@ svg {
     }
     #right {
         scale: -0.7 !important;
+    }
+    #searchbar {
+        font-size: 20px;
     }
 }
 #haraerre {
