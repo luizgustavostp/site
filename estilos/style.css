@@ -517,6 +517,7 @@ svg {
     }
     #searchbar {
         font-size: 20px;
+        width: 48vw;
     }
 }
 #haraerre {
