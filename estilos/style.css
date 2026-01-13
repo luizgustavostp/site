@@ -63,7 +63,7 @@ ul {
     position: absolute;
     z-index: 2;
 }
-#conta:hover,#carrinho:hover  {
+#conta:hover,#carrinho:hover,#conta:active,#carrinho:active  {
     background: var(--color1);
     svg {
         fill:  var(--black);
@@ -180,9 +180,17 @@ ul {
         margin-top: 16px;
         color: #7D7D7D;
         transition: 200ms ease;
+        flex-wrap: nowrap;
     }
     li:hover {
         color:  var(--black);
+    }
+}
+.navegationitem {
+    svg {
+        transform: translate(-8px,6px);
+
+        margin: 0;
     }
 }
 #carrinho {
@@ -467,7 +475,7 @@ svg {
 }
 @media (max-width:700px) {
     #rodape {
-        top: 148px;
+        top: 182px;
     }
    #navlist {
     height: 164px;
@@ -485,28 +493,57 @@ svg {
         margin: 0;
     }
     #navegation {
-        margin: 36px auto;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        line-height: 8px;
+        height: 72px;
+        display: flex;
+        flex-wrap: wrap !important;
+        margin: 32px auto;
         border: none;
+        li {
+            font-size: 14px;
+            margin-top: 0;
+        }
     }
     #navlist {
         height: 76px;
     }
     #header {
-        height: 148px;
+        height: 186px;
     }
     .perfume {
         display: flex;
         flex-direction: column;
         gap: 32px;
+        justify-content: center;
+        align-items: center;
         h1 {
-            display: none;
+            order: 1;
+            display: block;
+            transform: translateY(88px);
+            
         }
         img {
-            scale: 0.8;
+            scale: 0.7;
+            order: 2;
             transform: translateY(40px);
+            transform: translateX(48px);
+            margin: auto;
+        }
+        button {
+            display: none;
         }
         img:hover {
             scale: 0.825;
+        }
+        .arrow {
+            position: fixed !important;
+        }
+        #right {
+            position: absolute !important;
+            
         }
     }
     .arrow {
@@ -518,6 +555,23 @@ svg {
     #searchbar {
         font-size: 20px;
         width: 48vw;
+    }
+
+}
+@media (max-width:444px) {
+    .perfume {
+        h1 {
+            font-size: 48px;
+        }
+        img {
+            scale: 0.5;
+            transform: translateX(40px);
+            transform: translateY(50px);
+        }
+        .arrow {
+            margin-left: 40px;
+            display: block;
+        }
     }
 }
 #haraerre {
