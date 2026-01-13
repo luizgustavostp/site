@@ -5,11 +5,15 @@
     --color3:sd;
     --color2:#F0F0F0;
     --color1:#e4f1f8;
-    --black:rgb(40, 40, 40);
+    --black:rgb(33, 33, 33);
 }
 @font-face {
     font-family: "Akira";
-    src: url("../fonts/Akira Expanded Demo.otf");
+    src: url("../fonts/BebasNeue-Regular.ttf");
+}
+@font-face {
+    font-family: "archivo";
+    src: url("../fonts/ArchivoBlack-Regular.ttf");
 }
 * {
     margin: 0;
@@ -32,7 +36,6 @@ ul {
 }
 #navlist {
     height: 90px;
-    width: 100%;
     justify-content: space-between;
     align-items:center;
     img { 
@@ -150,9 +153,8 @@ ul {
     position: fixed;
     right: 50%;
     transform: translateX(50%);
-    height: 152px;
-    background-color: rgba(255, 255, 255, 0.342);
-    backdrop-filter: blur(8px);
+    height: 172px;
+    background-color: white;
     z-index: 2;
     input {
         background-color: none;
@@ -168,22 +170,21 @@ ul {
     list-style-type: none;
     gap: 16px;
     width: 100vw;
+    transform: translateY(30px);
     z-index: 0;
     left: 0;
-
-    border-top: 1px solid rgb(122, 121, 121);
     * {
         cursor: pointer;
     }
-    li {
+    a {
         margin-left: 40px;
         margin-top: 16px;
-        color: #7D7D7D;
+        color: #676767;
         transition: 200ms ease;
         flex-wrap: nowrap;
     }
-    li:hover {
-        color:  var(--black);
+    a:hover {
+        color: var(--black);
     }
 }
 .navegationitem {
@@ -239,11 +240,11 @@ ul {
     transition: 300ms ease;
     h1 {
         font-family: "Akira";
-        font-size: 3em;
+        font-size: 128px;
         color: rgb(245, 209, 175);
         margin: 12px;
         transform: translateY(-60px);
-        line-height: 38px;
+        line-height: 100px;
         display: flex;
         flex-wrap: wrap;
         max-width: 200px;
@@ -265,14 +266,14 @@ ul {
     padding: 12px;
     font-weight: 500;
     border-radius: 8px;
-    font-size: 0.25em;
+    font-size: 12px !important;
     border: none;
     color: rgb(33, 33, 33);
     background: rgb(245, 209, 175);
     transition: 200ms;
     cursor: pointer;
     width: 1000%;
-    transform: translateY(140px);
+    transform: translateY(100px);
 }
 
 body {
@@ -342,7 +343,7 @@ div.display {
     }
 }
 #rodape {
-    top: 150px;
+    top: 172px;
 }
 #itemlogo:hover {
     scale: 1.05;
@@ -423,6 +424,52 @@ button:hover {
 svg {
     margin:28px;
 }
+#divisao1 {
+    height: 1px;
+    width: 100%;
+    position: fixed;
+    top: 100px;
+    background-color: var(--color1);
+    z-index: 2;
+    display: block;
+}
+#haraerre {
+    position: fixed;
+    width: 150vw;
+    height: 1px;
+    background-color:  var(--black);
+    transform: translateX(-10%);
+}
+.nomedoperfume {
+    transition: 300ms ease;
+}
+.nomedoperfume:hover {
+    scale: 1.025;
+}
+a {
+    text-decoration: none;
+    color: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+#tittlefeminino {
+    font-family: "archivo";
+    font-size: 48px !important;
+    color: rgb(245, 101, 125);
+}
+#feminino {
+    position: absolute;
+    top: 770px;
+    width: 100%;
+    height: 600px;
+    background-color: black;
+}
+#categoriafeminina {
+    width: 88%;
+    margin: auto;
+}
+
 @keyframes lado {
     0% {
         transform: translateX(500px);
@@ -468,12 +515,16 @@ svg {
     }
     #navegation {
         scale: 0.8;
+        transform: translateY(52px);
     }
     #rodape {
-        top: 192px;        
+        top: 172px;        
     }
 }
 @media (max-width:700px) {
+    #divisao1 {
+        display: none;
+    }
     #rodape {
         top: 182px;
     }
@@ -498,6 +549,7 @@ svg {
         position: absolute;
         line-height: 8px;
         height: 72px;
+        transform: translateX(-40px);
         display: flex;
         flex-wrap: wrap !important;
         margin: 32px auto;
@@ -507,6 +559,7 @@ svg {
             margin-top: 0;
         }
     }
+    
     #navlist {
         height: 76px;
     }
@@ -522,8 +575,9 @@ svg {
         h1 {
             order: 1;
             display: block;
-            transform: translateY(88px);
-            
+            transform: translate(8px,88px);
+            font-size: 92px;
+            line-height: 72px;
         }
         img {
             scale: 0.7;
@@ -560,9 +614,7 @@ svg {
 }
 @media (max-width:444px) {
     .perfume {
-        h1 {
-            font-size: 48px;
-        }
+
         img {
             scale: 0.5;
             transform: translateX(40px);
@@ -573,24 +625,4 @@ svg {
             display: block;
         }
     }
-}
-#haraerre {
-    position: fixed;
-    width: 150vw;
-    height: 1px;
-    background-color:  var(--black);
-    transform: translateX(-10%);
-}
-.nomedoperfume {
-    transition: 300ms ease;
-}
-.nomedoperfume:hover {
-    scale: 1.025;
-}
-a {
-    text-decoration: none;
-    color: none;
-}
-html {
-    scroll-behavior: smooth;
 }
