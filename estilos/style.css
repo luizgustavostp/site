@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root {
-    --gray:rgb(188, 188, 188);
+:root { 
+    --gray:rgb(110, 110, 110);
     --color2:#F0F0F0;
     --color1:#e4f1f8;
     --black:rgb(51, 51, 51);
+    --menu: rgb(197, 216, 216);
+    --linarblue:
 }
 @font-face {
     font-family: "Akira";
@@ -67,7 +69,7 @@ ul {
     z-index: 2;
 }
 #conta:hover,#carrinho:hover,#conta:active,#carrinho:active  {
-    background: var(--color1);
+    background: var(--menu);
     svg {
         fill:  var(--black);
     }
@@ -87,7 +89,6 @@ ul {
     width: 120px;
 }
 #conta {
-
     transform: translateY(8px);
     padding-right: 16px;
     color: var(--gray) !important;
@@ -153,7 +154,7 @@ ul {
     position: fixed;
     right: 50%;
     transform: translateX(50%);
-    height: 172px;
+    height: 184px;
     background-color: white;
     z-index: 2;
     input {
@@ -166,12 +167,17 @@ ul {
     height: 32px;
 }
 #navegation {
+    border-top: 1px solid var(--gray);
+    padding-top:12px;
+    align-items: center;
+    justify-content: center;
     display: flex;
     list-style-type: none;
     gap: 16px;
     width: 100vw;
+    position: fixed;
     transform: translateY(30px);
-    z-index: 0;
+    z-index: 4;
     transition: 300ms ease;
     left: 0;
     * {
@@ -221,82 +227,42 @@ a:hover>svg,a:hover>svg>path,a:hover>svg>g>path {
         color: var(--gray);
     }
 }
+
 #rodape {
-    background-image: url("../imgs/issomrmr.png");
-    background-position: center;
-    background-attachment: initial;
     position: absolute;
     height: 450px;
-    width: 100%;
+    width: 96%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    border-radius: 24px;
+    margin: 2%;
     overflow: hidden;
-    img {
-        filter: saturate(1.1)brightness(1.1);
-    }
 }
-.arrow {
-    transition: 300ms ease;
-    height: 50px;
-    width: 50px;
-    color: rgba(33, 33, 33, 0.249);
-    border-radius: 50%;
+#carrosel {
     display: flex;
-    background: var(--gray);
-    opacity: 0.3;
-    cursor: pointer;
-    img {
-        scale: 0.45;
-    }
+    width: 500%; /* 100% para cada imagem (4 originais + 1 repetida) */
+    animation: deslizar 24s infinite ease-in-out;
 }
-.arrow:hover {
-    opacity: 0.6;
-    scale: 1.1;
-}
-.perfume {
-    display: flex;
-    align-items: center;
-    transform: translate(-30px,40px);
-    transition: 300ms ease;
-    h1 {
-        font-family: "Akira";
-        font-size: 128px;
-        color: rgb(245, 209, 175);
-        margin: 12px;
-        transform: translateY(-60px);
-        line-height: 100px;
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 200px;
-        height: 100%;
-        transition: 300ms ease;
-    }
-    
-}
-.perfume:hover {
-    scale: 1.1;
-}
-#right {
-    scale: -1;
-}
-#right:hover {
-    scale: -1.1;
-}
-#learnabout {
-    padding: 12px;
-    font-weight: 500;
-    border-radius: 8px;
-    font-size: 12px !important;
-    border: none;
-    color: rgb(33, 33, 33);
-    background: rgb(245, 209, 175);
-    transition: 200ms;
-    cursor: pointer;
-    width: 1000%;
-    transform: translateY(100px);
+#carrosel img {
+    width: 100%; /* 100% dividido pelo número total de imagens (5) */
+    height: auto;
+    object-fit: cover;
 }
 
+@keyframes deslizar {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(0); }     /* Foto 1 parada */
+  
+  25%  { transform: translateX(-100%); }  /* Move para Foto 2 */
+  45%  { transform: translateX(-100%); }  /* Foto 2 parada */
+  
+  50%  { transform: translateX(-200%); }  /* Move para Foto 3 */
+  70%  { transform: translateX(-200%); }  /* Foto 3 parada */
+  
+  75%  { transform: translateX(-300%); }  /* Move para Foto 4 */
+  95%  { transform: translateX(-300%); }  /* Foto 4 parada */
+  
+  100% { transform: translateX(-400%); }  /* Move para a Foto 1 (repetida) */
+}¹
 body {
     height: 2000px;
 }
@@ -310,20 +276,18 @@ body {
     
 }
 div.display {
-    
     align-items: start;
     position: fixed;
-    background-color: var(--color1);
+    background-color: var(--menu);
     padding: 16px;
     color: rgb(33, 33, 33);;
     border-radius: 0 0 8px 8px;
-    border-bottom: 1px solid rgb(180, 213, 236);
     height: 74px;
     padding-left: 24px;
     line-height: 0px;
     width: 212px;
     top:  64px;
-    z-index: 100;
+    z-index: 9999 !important ;
     right: 0px;
     display: none;
     transition: 200ms;
@@ -364,7 +328,7 @@ div.display {
     }
 }
 #rodape {
-    top: 172px;
+    top: 180px;
 }
 #itemlogo:hover {
     scale: 1.05;
@@ -414,6 +378,7 @@ button:hover {
     height: 100vh;
     background-color:rgb(232, 239, 243);
     position: fixed;
+    border-left: 1px solid black;
     top: 0;
     right: 0;
     z-index: 6;
@@ -481,7 +446,7 @@ html {
 }
 #feminino {
     position: absolute;
-    top: 700px;
+    top: 722px;
     width: 100%;
     height: 600px;
 }
@@ -532,7 +497,14 @@ html {
     .navitem {
         scale: 0.96;
     }
-
+    #rodape {
+        height: 350px;
+    }
+}
+@media (max-width:850px) {
+    #rodape {
+        height: 300px;
+    }
 }
 @media (max-width:960px) {
     #conta {
@@ -570,6 +542,7 @@ html {
     }
     #rodape {
         top: 182px;
+        height: 280px;
     }
    #navlist {
     height: 164px;
@@ -655,7 +628,20 @@ html {
     }
 
 }
+@media (max-width:650px) {
+    #rodape {
+        height: 250px;
+    }
+}
+@media (max-width:550px) {
+    #rodape {
+        height: 200px;
+    }
+}
 @media (max-width:444px) {
+    #rodape {
+        height: 180px;
+    }
     .perfume {
 
         img {
