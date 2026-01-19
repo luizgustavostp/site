@@ -1,29 +1,69 @@
 let hamburguer = document.getElementById("hamburguer")
 let display = document.querySelector("div#displayhamburguer")
 let displaystyle = window.getComputedStyle(display).display
-
-function fodase() {
-    console.log("consolo logo10")
+let grid = document.getElementById("gridmulher")
+let itembase = document.getElementsByClassName("displayitem")[0]
+function displayupdate() {
     displaystyle = window.getComputedStyle(display).display
-    console.log("consolo logo2")
     if (displaystyle == "none") {
-        console.log("consolo logo")
         display.style.display = "block"
     }
     else {
         display.style.display = "none"
     }
 }
+async function updateitems() {
 try {
 fetch("produtos.php")
     .then(response => response.json())
     .then(data => {
-        console.log(data);
-        data.forEach(produto => {
-            console.log(produto.nome, produto.preco);
-        });
-})
-}catch {
-    //console.log(err)
+    data.map(element => {
+        let newitem = itembase.cloneNode(true)
+        let itembasechild = newitem.childNodes
+        console.log(itembasechild)
+        console.log(element)
+        itembasechild[5].innerHTML += element.preço
+        itembasechild[1].src = element.imageid;
+        itembasechild[3].innerHTML= element.name;
+        grid.appendChild(newitem)
+    });
+});
+}
+catch(erro) {
+    console.log(erro)
+}
 }
 
+
+function trocarImagem() {
+    const vulcan = document.getElementById('vulcan');
+    const jubilant = document.getElementById('jubilant');
+    const banoffi = document.getElementById('banoffi');
+    const lataffa = document.getElementById("lataffa")
+    const lataffa2 = document.getElementById("lataffa2")
+  if (window.innerWidth <= 550) {
+    vulcan.src = 'imgs/vulcan-mobile.png';
+    jubilant.src = 'imgs/jubilant-mobile.png';
+    banoffi.src = 'imgs/banoffi-mobile.png';
+    lataffa.src = "imgs/lataffa-mobile.png";
+    lataffa2.src = "imgs/lataffa-mobile.png";
+  } else {
+    vulcan.src = 'imgs/vulcan-banner.png';
+    jubilant.src = 'imgs/jubilant-noir.png';
+    banoffi.src = 'imgs/banoffi.png';
+    lataffa.src = "imgs/lataffa-banner(satured.png";
+    lataffa2.src = "imgs/lataffa-banner(satured.png";
+  }
+}
+
+// Chama ao carregar e ao redimensionar a janela
+window.addEventListener('load', trocarImagem);
+window.addEventListener('resize', trocarImagem);
+
+(() => {
+    updateitems()
+    updateitems()
+    updateitems()
+    updateitems()
+    updateitems()   
+})()

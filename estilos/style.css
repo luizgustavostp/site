@@ -18,6 +18,7 @@
     src: url("../fonts/ArchivoBlack-Regular.ttf");
 }
 * {
+    -webkit-tap-highlight-color: transparent;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -137,6 +138,7 @@ ul {
     background: none;
 }
 #searchbar {
+
     border: none;
     font-size: 20px;
     border-bottom: 1px solid  var(--black);
@@ -161,7 +163,6 @@ ul {
         background-color: none;
     }
 }
-
 #search-icon {
     width: 32px;
     height: 32px;
@@ -180,6 +181,8 @@ ul {
     z-index: 4;
     transition: 300ms ease;
     left: 0;
+    margin: auto !important;
+
     * {
         cursor: pointer;
     }
@@ -189,6 +192,7 @@ ul {
         color: var(--gray);
         transition: 300ms ease;
         flex-wrap: nowrap;
+
     }
     a:hover {
         color: var(--black);
@@ -240,7 +244,7 @@ a:hover>svg,a:hover>svg>path,a:hover>svg>g>path {
 #carrosel {
     display: flex;
     width: 500%; /* 100% para cada imagem (4 originais + 1 repetida) */
-    animation: deslizar 24s infinite ease-in-out;
+    animation: deslizar 24s infinite;
 }
 #carrosel img {
     width: 100%; /* 100% dividido pelo número total de imagens (5) */
@@ -336,9 +340,6 @@ div.display {
 img {
     transition: 200ms;
 }
-.perfumeimg:hover {
-    scale: 1.025;
-}
 button {
     border: none;
     cursor: pointer;
@@ -373,7 +374,7 @@ button:hover {
 }
 
 #displayhamburguer {
-    width: 300px;
+    width: 99.5vw; 
     display: none;
     height: 100vh;
     background-color:rgb(232, 239, 243);
@@ -383,22 +384,41 @@ button:hover {
     right: 0;
     z-index: 6;
     animation-name: lado;
-    animation-duration: 1s;
-    padding: 32px;
+    animation-duration: 0.8s;
+
+
     p {
-        margin: 12px 0;
-        font-size: 24px;
+        width: fit-content;
+        margin: 24px auto;
+        font-size: 36px;
+        font-weight: 500;
+        transform: translateY(24px);
     }
+
     ul {
-        font-size: 16px;
+        width: fit-content;
+        margin: 0 auto;
+        font-size: 24px;
         flex-direction: column;
+    }
+    li {
+        padding: 4px;
+        width: 99.5vw;
+        display: flex;
+        justify-content: center;
+        transition: 200ms;
+    }
+    li:hover {
+        background-color: rgb(135, 144, 179);
+
     }
 }
 #quit {
     color: var(--black);
     background-color: rgb(232, 239, 243);
-    height: 32px;
-    width: 32px;
+    height: 44px;
+    width: 44px;
+    transform: translate(25px,25px);
     svg {
         margin: 0;
         padding: 0;
@@ -410,28 +430,7 @@ button:hover {
 svg {
     margin:28px;
 }
-#divisao1 {
-    height: 1px;
-    width: 100%;
-    position: fixed;
-    top: 100px;
-    background-color: var(--color1);
-    z-index: 2;
-    display: block;
-}
-#haraerre {
-    position: fixed;
-    width: 150vw;
-    height: 1px;
-    background-color:  var(--black);
-    transform: translateX(-10%);
-}
-.nomedoperfume {
-    transition: 300ms ease;
-}
-.nomedoperfume:hover {
-    scale: 1.025;
-}
+
 a {
     text-decoration: none;
     color: none;
@@ -448,36 +447,65 @@ html {
     position: absolute;
     top: 722px;
     width: 100%;
-    height: 600px;
+    height: 1200px;
 }
-#categoriafeminina {
+#categoriafeminina { 
     width: 72%;
     margin: auto;
     transform: translateY(264px);
 }
-#divisao2 {
-    white-space: nowrap;
-    font-size: 16px;
-    margin-top: 750px;
-    color: var(--gray);
-    position: absolute;
-    top: -104px;
-    right: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-    width: 90vw;
-    transform: translateX(50%);
-    line-break: strict;
-}
-.barra {
-    height: 1px;
-    width: 512px;
-    background-color: var(--gray);
-    display: block;
-}
 
+.displayitem:first-child {
+    display: none;
+}
+#gridmulher {
+    width: 80%;
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 200px;
+    gap: 32px;
+}
+.displayitem {
+    height: 512px;
+    width: 332px;
+    padding:24px;
+    display: flex;
+    border-radius: 12px;
+    cursor: pointer;
+    flex-direction: column;
+    img {
+        width: 268px;
+        height: 268px; 
+    }
+    h2 {
+        font-family: "arial";
+        font-size: 20px;
+        font-weight: normal;
+        text-align: start;
+        color: rgb(54, 54, 54);
+        transform: translateY();
+    }   
+    p {
+        font-size: 44px;
+        font-weight: bold;
+        transform: translateY(52px);
+    }
+}
+.displayitem:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 4px;
+}
+.stars {
+    height: auto !important;
+    width: 32% !important;
+    transform: translateY(28px);
+}
+.estoque {
+    font-size: 12px !important;
+    position: relative;
+    right: -208px;
+    top: -76px;
+    font-weight: 300 !important;
+}
 @keyframes lado {
     0% {
         transform: translateX(500px);
@@ -531,25 +559,32 @@ html {
     #navegation {
         scale: 0.8;
         transform: translateY(52px);
+        li {
+            font-size: 20px !important;
+        }
     }
     #rodape {
         top: 172px;        
     }
+
 }
 @media (max-width:700px) {
     #divisao1 {
         display: none;
     }
     #rodape {
-        top: 182px;
+        top: 228px;
         height: 280px;
+    }
+    #header {
+        height: 228px !important;
     }
    #navlist {
     height: 164px;
     justify-content: space-around;
    } 
    #inputitem {
-        transform: translateY(40px);
+        transform: translateY(60px);
         width: 700px;
         display: flex;
         justify-content: center;
@@ -565,68 +600,28 @@ html {
         position: absolute;
         line-height: 8px;
         height: 72px;
-        transform: translateX(-40px);
         display: flex;
         flex-wrap: wrap !important;
         margin: 32px auto;
         border: none;
+        gap: 16px 32px;
+        transform: translateY(76px);
         li {
-            font-size: 14px;
-            margin-top: 0;
+            text-align: center;
         }
-    }
-    
-    #navlist {
-        height: 76px;
-    }
-    #header {
-        height: 186px;
-    }
-    .perfume {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-        justify-content: center;
-        align-items: center;
-        h1 {
-            order: 1;
-            display: block;
-            transform: translate(8px,88px);
-            font-size: 92px;
-            line-height: 72px;
-        }
-        img {
-            scale: 0.7;
-            order: 2;
-            transform: translateY(40px);
-            transform: translateX(48px);
-            margin: auto;
-        }
-        button {
-            display: none;
-        }
-        img:hover {
-            scale: 0.825;
-        }
-        .arrow {
-            position: fixed !important;
-        }
-        #right {
-            position: absolute !important;
+        a {
+            margin: 0;
             
         }
-    }
-    .arrow {
-        scale: 0.7 !important;
-    }
-    #right {
-        scale: -0.7 !important;
-    }
-    #searchbar {
-        font-size: 20px;
-        width: 48vw;
-    }
+    } 
+#navlist {
+    height: 76px;
+}
 
+#searchbar {
+    font-size: 20px;
+    width: 48vw;
+}
 }
 @media (max-width:650px) {
     #rodape {
@@ -635,23 +630,15 @@ html {
 }
 @media (max-width:550px) {
     #rodape {
-        height: 200px;
+        height: 300px;
     }
 }
 @media (max-width:444px) {
     #rodape {
-        height: 180px;
+        height:250px;
+        width: auto;
     }
-    .perfume {
-
-        img {
-            scale: 0.5;
-            transform: translateX(40px);
-            transform: translateY(50px);
-        }
-        .arrow {
-            margin-left: 40px;
-            display: block;
-        }
-    }
+}
+img {
+    pointer-events: none;
 }
