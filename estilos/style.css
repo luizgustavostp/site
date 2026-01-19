@@ -74,7 +74,6 @@ ul {
     border-bottom: 1px solid  var(--black);
     color:  var(--black);
     font-weight: 200;
-
     background: none !important;
 }
 #searchbar:enabled{
@@ -421,14 +420,16 @@ html {
         margin: 0;
     }
     #inputitem {
-        transform: translateY(60px);
-        width: 80%;
+        transform: translateX(-50%);
+        left: 50%;
+        top: 128px;
+        
+        position: absolute;
         display: flex;
         justify-content: center;
-        scale: 1.2;
-        position: absolute;
     }
     header {
+        padding: 16px;
         height: 204px;
     }
     #searchbar {
