@@ -400,7 +400,6 @@ html {
 }
 @media (max-width:700px) {
     #rodape {
-
         height: 280px;
     }
     #navegation {
@@ -413,13 +412,15 @@ html {
             margin: 0;
         }
     }
-   #navlist {
-    justify-content:  space-between;
-   }
-   #itemlogo {
-    transform: translateX(0);
-   }
-   #inputitem {
+     #navlist {
+        height: 76px;
+        justify-content:  space-between;
+    }
+    #itemlogo {
+        transform: translateX(0);
+        margin: 0;
+    }
+    #inputitem {
         transform: translateY(60px);
         width: 80%;
         display: flex;
@@ -430,16 +431,9 @@ html {
     header {
         height: 204px;
     }
-    #itemlogo {
-        margin: 0;
+    #searchbar {
+        font-size: 20px;
     }
-#navlist {
-    height: 76px;
-}
-
-#searchbar {
-    font-size: 20px;
-}
 }
 @media (max-width:650px) {
     #rodape {
