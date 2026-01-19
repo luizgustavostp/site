@@ -52,63 +52,6 @@ ul {
     align-items: center;
     transition: 300ms;
 }
-.navitem:hover>i {
-    animation-name: thirdsla;
-    animation-duration: 0.5s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-}
-.navitem:hover>div.display{
-    display: flex;
-    position: absolute;
-    z-index: 2;
-}
-#conta:hover,#carrinho:hover,#conta:active,#carrinho:active  {
-    background: var(--menu);
-    svg {
-        fill:  var(--black);
-    }
-    div {
-        color:  var(--black) !important;
-    }
-    span {
-        color:  var(--black);
-    }
-    i {
-        color:  var(--black);
-    }
-    
-}
-.icons {
-    height: 120px;
-    width: 120px;
-}
-#conta {
-    transform: translateY(8px);
-    padding-right: 16px;
-    color: var(--gray) !important;
-    cursor: pointer;
-    img {
-        height: 100px;
-        width: 100px;
-        margin-right: 8px;
-    }
-    i {
-        color: var(--gray);
-    }
-   
-}
-.text {
-    color: var(--gray) !important;
-    span {
-        color: var(--gray);
-    }
-}
-.bold {
-    font-size: 1.3em;
-    font-weight: 300;
-   
-}
 #itemlogo {
     height: 136px;
     width: 136px;
@@ -201,15 +144,6 @@ a:hover>svg,a:hover>svg>path,a:hover>svg>g>path {
     fill: var(--black) !important;
     stroke: var(--black) !important;
 }
-#carrinho {
-    transform: translateY(8px);
-    padding-right:16px;
-    cursor: pointer;
-    i {
-        color: var(--gray);
-    }
-}
-
 #rodape {
     height: 450px;
     width: 96%;
@@ -256,58 +190,6 @@ body {
         transform: rotate(180deg);
     }
     
-}
-div.display {
-    align-items: start;
-    position: fixed;
-    background-color: var(--menu);
-    padding: 16px;
-    color: rgb(33, 33, 33);;
-    border-radius: 0 0 8px 8px;
-    height: 74px;
-    padding-left: 24px;
-    line-height: 0px;
-    width: 212px;
-    top:  64px;
-    z-index: 9999 !important ;
-    right: 0px;
-    display: none;
-    transition: 200ms;
-    opacity: 1;
-    justify-content: start;
-    align-items: center;
-    img {
-        height: 40px;
-        width: 40px;
-    }
-    ul {
-        list-style:none;
-        flex-direction: column;
-    }
-    li:hover {
-        color: black;
-    }
-    li {
-        line-height: -5px;
-        font-weight: 300;
-        height: 28px;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-    }
-    
-}
-#contadisplay {
-    height: 72px;
-    width: 185px;
-    top: 80px;
-    right: 0px;
-    padding: 8px;
-    z-index: 9999999;
-    img {
-        height: 40px;
-        width: 40px;
-    }
 }
 #rodape {
     top: 180px;
