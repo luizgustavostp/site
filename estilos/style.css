@@ -39,6 +39,8 @@ ul {
 }
 #navlist {
     height: 90px;
+    width: 92%;
+    margin: auto;
     justify-content: space-between;
     align-items:center;
     img { 
@@ -49,14 +51,6 @@ ul {
     display:flex;
     align-items: center;
     transition: 300ms;
-    div {
-        line-height: 16px;
-        font-weight: 200;
-        font-size: 1em;
-        position: relative;
-        right: 22px;
-    }
-    
 }
 .navitem:hover>i {
     animation-name: thirdsla;
@@ -118,14 +112,8 @@ ul {
 #itemlogo {
     height: 136px;
     width: 136px;
-    position: absolute;
-    top: 24px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    transform: translateX(-100px);
     user-select: none;
-    transform: translateY(-44px);
     user-select: none;
     -webkit-user-drag: none;
     img {
@@ -138,49 +126,39 @@ ul {
     background: none;
 }
 #searchbar {
-
     border: none;
     font-size: 20px;
     border-bottom: 1px solid  var(--black);
     color:  var(--black);
     font-weight: 200;
+
     background: none !important;
 }
 #searchbar:enabled{
     outline: none;
 }
-#header {
-    width: 100%;
-    padding: 0 4%;
-    margin: 0 auto;
-    position: fixed;
-    right: 50%;
-    transform: translateX(50%);
-    height: 184px;
-    background-color: white;
-    z-index: 2;
-    input {
-        background-color: none;
-    }
-}
+
+
 #search-icon {
     width: 32px;
     height: 32px;
 }
 #navegation {
+    background-color: white;
     border-top: 1px solid var(--gray);
-    padding-top:12px;
+    padding:12px 0;
     align-items: center;
     justify-content: center;
     display: flex;
     list-style-type: none;
     gap: 16px;
-    width: 100vw;
-    position: fixed;
-    transform: translateY(30px);
+    width: 100%;
+    position: sticky;
+    top: 0;
     z-index: 4;
     transition: 300ms ease;
     left: 0;
+    overflow: visible !important;
     margin: auto !important;
 
     * {
@@ -233,12 +211,12 @@ a:hover>svg,a:hover>svg>path,a:hover>svg>g>path {
 }
 
 #rodape {
-    position: absolute;
     height: 450px;
     width: 96%;
     display: flex;
+    max-width: 1828px;
     border-radius: 24px;
-    margin: 2%;
+    margin: 2% auto;
     overflow: hidden;
 }
 #carrosel {
@@ -353,7 +331,6 @@ button {
     font-weight: 200;
 }
 #hamburguer {
-    display: none;
     left: 0;
     flex-direction: column;
     position: relative;
@@ -372,11 +349,16 @@ button:hover {
 #hamburguer:hover>div#displayhamburguer {
     display: flex;
 }
-
+header {
+    background-color: white;
+    padding: 32px;
+    max-width: 1828px;
+    margin: auto;
+}
 #displayhamburguer {
-    width: 99.5vw; 
+    width: 100%; 
     display: none;
-    height: 100vh;
+    height: 100%;
     background-color:rgb(232, 239, 243);
     position: fixed;
     border-left: 1px solid black;
@@ -385,8 +367,6 @@ button:hover {
     z-index: 6;
     animation-name: lado;
     animation-duration: 0.8s;
-
-
     p {
         width: fit-content;
         margin: 24px auto;
@@ -394,7 +374,6 @@ button:hover {
         font-weight: 500;
         transform: translateY(24px);
     }
-
     ul {
         width: fit-content;
         margin: 0 auto;
@@ -419,6 +398,9 @@ button:hover {
     height: 44px;
     width: 44px;
     transform: translate(25px,25px);
+    align-items: center;
+    justify-content: center;
+    display: flex;
     svg {
         margin: 0;
         padding: 0;
@@ -444,10 +426,9 @@ html {
     color: rgb(245, 101, 125);
 }
 #feminino {
-    position: absolute;
-    top: 722px;
+
     width: 100%;
-    height: 1200px;
+    height: 1500px;
 }
 #categoriafeminina { 
     width: 72%;
@@ -508,23 +489,13 @@ html {
 }
 @keyframes lado {
     0% {
-        transform: translateX(500px);
+        transform: translateX(100vw);
     }
     100% {
         transform: translateX(0);
     }
 }
 @media (max-width:1030px) {
-    #itemlogo {
-        scale: 0.7;
-        transform: translateY(-50px);
-    }
-    #itemlogo:hover {
-        scale: 0.75;
-    }
-    .navitem {
-        scale: 0.96;
-    }
     #rodape {
         height: 350px;
     }
@@ -535,32 +506,9 @@ html {
     }
 }
 @media (max-width:960px) {
-    #conta {
-        display: none;
-    }
-    #carrinho {
-        display: none;
-    }
-    #itemlogo {
-        position: static;
-        transform: translateY(30px);
-        transform: translateX(-50%);
-        right: 50%;
-        margin: 0;
-    }
-    #hamburguer{
-        display: flex;
-        
-    }
-    #navlist {
-        height: 80px;
-        
-    }
     #navegation {
-        scale: 0.8;
-        transform: translateY(52px);
         li {
-            font-size: 20px !important;
+            font-size: 16px !important;
         }
     }
     #rodape {
@@ -569,58 +517,46 @@ html {
 
 }
 @media (max-width:700px) {
-    #divisao1 {
-        display: none;
-    }
     #rodape {
-        top: 228px;
+
         height: 280px;
     }
-    #header {
-        height: 228px !important;
+    #navegation {
+        height: 88px;
+        flex-wrap: wrap;
+        gap: 0px;
+        li {
+            align-items: start;
+            font-size: 8px;
+            margin: 0;
+        }
     }
    #navlist {
-    height: 164px;
-    justify-content: space-around;
-   } 
+    justify-content:  space-between;
+   }
+   #itemlogo {
+    transform: translateX(0);
+   }
    #inputitem {
         transform: translateY(60px);
-        width: 700px;
+        width: 80%;
         display: flex;
         justify-content: center;
         scale: 1.2;
         position: absolute;
     }
+    header {
+        height: 204px;
+    }
     #itemlogo {
         margin: 0;
     }
-    #navegation {
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        line-height: 8px;
-        height: 72px;
-        display: flex;
-        flex-wrap: wrap !important;
-        margin: 32px auto;
-        border: none;
-        gap: 16px 32px;
-        transform: translateY(76px);
-        li {
-            text-align: center;
-        }
-        a {
-            margin: 0;
-            
-        }
-    } 
 #navlist {
     height: 76px;
 }
 
 #searchbar {
     font-size: 20px;
-    width: 48vw;
 }
 }
 @media (max-width:650px) {
@@ -635,7 +571,8 @@ html {
 }
 @media (max-width:444px) {
     #rodape {
-        height:250px;
+        scale: 0.95;
+        height:240px;
         width: auto;
     }
 }

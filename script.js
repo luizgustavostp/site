@@ -54,9 +54,18 @@ function trocarImagem() {
     lataffa.src = "imgs/lataffa-banner(satured.png";
     lataffa2.src = "imgs/lataffa-banner(satured.png";
   }
+    document.body.style.zoom = "90%"
+    if (window.innerWidth <= 1700) {
+    document.body.style.zoom = "100%"
+    }
+    else {
+        document.body.style.zoom = "90%"
+    }
 }
 
+
 // Chama ao carregar e ao redimensionar a janela
+
 window.addEventListener('load', trocarImagem);
 window.addEventListener('resize', trocarImagem);
 
