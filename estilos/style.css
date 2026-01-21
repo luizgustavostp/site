@@ -440,9 +440,6 @@ main {
     }
 }
 @media (max-width:960px) {
-    html,body {
-        overflow-x: hidden;
-    }
     #navegation {
         li {
             font-size: 16px !important;
