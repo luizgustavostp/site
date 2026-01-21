@@ -22,9 +22,10 @@ fetch("produtos.php")
         let itembasechild = newitem.childNodes
         console.log(itembasechild)
         console.log(element)
-        itembasechild[5].innerHTML += element.preço
+        itembasechild[7].textContent += element.preço
+        itembasechild[9].textContent += element.preço / 10
         itembasechild[1].src = element.imageid;
-        itembasechild[3].innerHTML= element.name;
+        itembasechild[3].textContent = element.name;
         grid.appendChild(newitem)
     });
 });
