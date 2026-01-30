@@ -1,0 +1,247 @@
+#filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 100ms;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    margin-left: 24px;
+    svg {
+        margin: 0;
+        stroke: white;
+        stroke-width: 3px;
+    }
+}
+#filter:hover {
+    background-color: rgb(81, 91, 116);
+}
+main {
+    padding-top: 12px;
+}
+svg {
+    margin: 0;
+}
+#divisao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#filterdisplay {
+    margin: auto;
+    margin-top: 24px;
+    width: 100%;
+    height: 120px;
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    z-index: 5;
+    background-color: white;
+    align-items: center;
+    justify-content: space-around;
+
+    p  {
+        margin-left: 48px;
+        margin-right: 24px;
+        font-size: 20px;
+    }
+    form {
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+    }
+    input {
+        height: 30px;
+    }
+    select {
+        font-size: 16px;
+        padding: 4px;
+        border: 1px solid black;
+        border-radius: 12px;
+    }
+    select:enabled {
+        outline: 0px;
+    }
+    input {
+        width: 200px;
+    }
+
+    
+}
+#label {
+    display:none;
+}
+#invisible {
+    display: none;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  width: 100%;
+  cursor: pointer;
+}
+/* trilho preenchido (Chrome / Edge) */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.341);
+}
+
+/* botão */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #111;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -6px;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #111;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 999px;
+}
+#result {
+    transform: translateX(6px);
+}
+option[selected] {
+    background-color: rgba(0, 0, 0, 0.341)  ;
+    color: white;
+}
+option:hover {
+    background-color: rgb(81, 91, 116);
+}
+#maxoprice {
+    width: 170px;
+}
+#sectionpesquisa {
+    margin: auto;
+}
+#divisao2 {
+    display: flex;
+}
+#divo1,#divo2 {
+    display: flex;
+}
+#displayitems {
+    width: fit-content;
+
+}
+@media (max-width:1880px) {
+    #sectionpesquisa{
+        width: 90vw;
+    }
+    #filterdisplay {
+        width: 90vw;
+    }
+}
+@media (max-width:1500px) {
+    #filterdisplay {
+        h1 {
+            font-size: 24px;
+        }
+        form {
+            p {
+                font-size: 16px;
+                margin-right:  12px;
+                margin-left: 24px;
+            }
+            button {
+                width: 32px;
+                height: 32px;
+                svg {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+}
+@media (max-width:1260px) {
+    #filterdisplay {
+        width: 95%;
+        height: 180px;
+        form {
+            flex-wrap: wrap;
+        }
+    }
+    #divisao {
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width:700px) {
+    #sectionpesquisa {
+        width: 100%;
+    }
+    #divo3 {
+        display: flex;
+        width: 80%;
+        justify-content: start;
+        align-items: center;
+        svg {
+            margin: 0;
+            margin-right: 24px;
+        }
+    }
+    #filterdisplay {
+        border-radius: 0;
+        width: 100%;
+        margin-top: 8px;
+        h1 {
+            display: none;
+        }
+    }
+    #sectionpesquisa {
+        font-size: 12px;
+    }
+    #maxoprice {
+        margin: 0;
+    }
+    #divo1 {
+        margin-bottom: 12px;
+    }
+    #displayitems {
+        margin-top:16px;
+    }
+}
+@media (max-width:500px) {
+    #filterdisplay {
+        height: 240px;
+        form {
+            align-items: start !important;
+            justify-content: start !important;
+        }
+        p {
+            margin-left: 0 !important;
+            text-align: start;
+        }
+    }
+    #divo1,#divo2 {
+        width: 80%;
+        margin: auto;
+    p {
+        margin-left: 0;
+    }
+    }
+    #divo1 {
+        margin-bottom: 12px !important;
+    }
+}
+#categoriafeminina {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 100% !important;
+}

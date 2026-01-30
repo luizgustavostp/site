@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure - Pesquisa</title>
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/search.css">:
+</head>
+<body>
+    <header id="header">
+        <ul id="navlist">
+            <button class="navitem" id="hamburguer">
+                <span id="dois"></span>
+                <span id="dois"></span>
+                <span id="dois"></span>
+            </button>
+                <li class="navitem" id="itemlogo">
+                <img src="imgs/logo.png" alt="" id="logo">
+                </li>
+                <li class="navitem" id="inputitem">
+                <form id="searchh" action="search.html"><input type="text" id="searchbar" name="q" placeholder="Buscar" autocomplete="off">
+                    <button id="submitbtn"><svg width="20px" height="20px" viewBox="0 -0.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Page-1" stroke="solid" stroke-width="3" fill="none" fill-rule="evenodd">
+                        <g id="Dribbble-Light-Preview" transform="translate(-219.000000, -280.000000)" fill="#000000">
+                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                        <path d="M184,138.586 L182.5153,140 L176.57545,134.343 L178.06015,132.929 L184,138.586 Z M170.35,132 C167.45515,132 165.1,129.757 165.1,127 C165.1,124.243 167.45515,122 170.35,122 C173.24485,122 175.6,124.243 175.6,127 C175.6,129.757 173.24485,132 170.35,132 L170.35,132 Z M170.35,120 C166.2907,120 163,123.134 163,127 C163,130.866 166.2907,134 170.35,134 C174.4093,134 177.7,130.866 177.7,127 C177.7,123.134 174.4093,120 170.35,120 L170.35,120 Z" id="search_left-[#1506]">
+                        </path>
+                        </g></g></g></svg>
+                    </button>
+                </form>
+                </li>
+            </ul>
+        </header>
+        <main>
+            <section id="sectionpesquisa">
+                <div id="divo3">
+                    <a href="index.html"><svg width="48px" height="48px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></a>
+                    <h1 id="result">Nenhum item foi encontrado!</h1>
+                </div>
+                <p id="label"> Verifique sua conexão com a internet para acessar ao site.</p>
+                <section id="filterdisplay">
+                    <h1>Filtro</h1>
+                    <form action="">
+                        <input type="text" name="q" id="invisible">
+                        <div id="divo1">
+                            <p>Categoria:</p>
+                            <select name="categoria" id="categoria">
+                                <option value="frutado">Frutado</option>
+                                <option value="amadeirado">Amadeirado</option>
+                                <option value="citrico">Citrico</option>
+                                <option value="frutado">Frutado</option>
+                                <option value="doce">Doce</option>
+                                <option value="aromatica">Aromatico</option>
+                                <option value="fresco">Fresco</option>
+                                <option value="couro">Couro</option>
+                                <option value="tropical">Tropical</option>
+                                <option value="baunilha">baunilha</option>
+                                <option value="notselected" selected>Não selecionado</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div id="divo2">
+                            <p>Gênero:</p>
+                            <select name="genero" id="genero">
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="unissex">Unissex</option>
+                                <option value="notselected" selected>Não selecionado</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div id="divisao">
+                            <p id="maxoprice" >Preço até:  300R$</p>
+                            <div id="divisao2">
+                                <input type="range" step="5" value="300" name="maxprice" id="maxprice" min="0" max="999">
+                                <button id="filter"><svg width="24px" height="24px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <title/>
+                                <g id="checkmark">
+                                <line x1="3" x2="12" y1="16" y2="25"/>
+                                <line x1="12" x2="29" y1="25" y2="7"/>
+                                </g>
+                                </svg></button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+                <section id="categoriafeminina">
+                    <div id="displayitems" class="gridd">
+                        <span class="displayitem">
+                            <img src="" alt="" class="imgperfume">
+                            <h2 class="tittleperfumeitem"></h2>
+                            <p class="label">a partir de</p>
+                            <p class="price">R$ </p>
+                            <p class="label2">ou 10X de R$</p>
+                            <img src="imgs/stars.webp" alt="" class="stars">
+                        </span>
+                    </div>
+                </section>
+            </section>
+                <div id="displayhamburguer">
+        <button id="quit"><svg width="32px" height="32px" viewBox="0 0 24 24" fill="#f4f4f4" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg></button>
+            <h1> MENU</h1>
+        <span id="menunave">
+            <p> <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg> Conta</p>
+            <ul>
+                <li><a href="account.html">Criar conta</a></li>
+                <li><a href="account.html?m=login">Fazer login</a></li>
+                <li><a href="#">items salvos</a></li>
+            </ul>
+            <p> <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                <style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style>
+                </defs>
+                <g id="cart">
+                <circle class="cls-1" cx="10.07" cy="20.59" r="1.91"/>
+                <circle class="cls-1" cx="18.66" cy="20.59" r="1.91"/>
+                <path class="cls-1" d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10"/>
+                <polyline class="cls-1" points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91"/>
+                </g>
+                </svg> Carrinho</p>
+            <ul>
+                <li><a href="#">Visualizar carrinho</a></li>
+                <li><a href="#">Adicionar endereço</a></li>
+            </ul>
+        </span>
+    </div>
+        </main>
+        <script src="script/search.js" type="module"></script>
+</body>
+</html>
