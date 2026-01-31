@@ -1,0 +1,75 @@
+section { 
+    display: none !important;
+    margin: auto;
+    width: 300px !important;
+    height: fit-content;
+    text-align: center;
+    line-height: 140%;
+    a {
+        margin-top: 20px;
+        text-decoration: underline !important;
+    }
+}
+.active {
+    display: block !important;
+}
+.active2 {
+    display: flex !important;
+}
+.aa {
+    text-decoration: underline;
+}
+#carregando {
+    display: flex;
+}
+#userinterface {
+    width: fit-content !important;
+    height: 2em;
+    text-align: center;
+    overflow-wrap: break-word;
+    margin-bottom: 48px;
+    line-height: 28px;
+    margin-bottom: 100px;
+}
+#add_address {
+    width: 400px;
+    align-items: start;
+    justify-self: center;
+    flex-direction: column;
+    label {
+        margin-top: 20px;
+        margin-bottom: 4px;
+        font-size: 20px;
+    }
+    button {
+        height: 32px;
+        width: 100%;
+        background-color: black;
+        font-weight: 500;
+        font-size: 20px;
+        color: white;
+        padding: 20px;
+        margin-top: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    input,select {
+        width: 100%;
+        font-size: 16px;
+        padding: 4px;
+        border: 1px solid black;
+        border-radius: 4px;
+    }
+    input::selection,select::selection {
+        outline: none;
+    }
+}
+@media (max-width:700px) {
+    #userinterface {
+        width: 380px !important;
+    }
+}
+#displayerrorr {
+    top: 70% !important;
+}

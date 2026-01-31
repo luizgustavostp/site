@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="estilos/account.css">
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/dashboard.css">
 </head>
 <body>
     <header id="header">
@@ -32,57 +32,67 @@
                 </li>
             </ul>
         </header>
-
-    <section id="loginaccount">
-        <a href="index.html" class="hagaref"><button class="voltarmenu">&leftarrow;</button></a>
-        <form action="" method="get" class="formulario" id="login">
-            <h1>Login</h1>
-            <label for="email">email: </label>
-            <input type="text" name="email" placeholder="insira seu email" id="email">
-            <label for="senha">senha: </label>
-            <input type="text" name="senha" placeholder="insira sua senha" id="senha">
-            <input type="submit" value="Fazer login ">
-        </form>
-    </section>
-
-    <section id="createaccount">
-        <a href="index.html" class="hagaref"><button class="voltarmenu">&leftarrow;</button></a>
-        <form id="create" action="" method="post" class="formulario">
-            <label for="email">email: </label>
-            <input type="text" name="email" placeholder="insira seu email"  id="email">
-            <label for="email">cpf: </label>
-            <input type="text" name="email" placeholder="insira seu cpf"  id="cpf">
-            <label for="senha">numero: </label>
-            <input type="text" name="senha" placeholder="insira seu numero de celular" id="numero">
-            <label for="senhaagain">senha: </label>
-            <input type="text" name="senha" placeholder="insira sua senha" id="password">
-            <p id="security">Segurança: </p>
-            <ul id="requisitos">
-                <li id="maxdigits" >Possui mais de 8 digitos</li>
-                <li id="letramaiscula">Possui letra maiscula</li>
-                <li id="possuinumero" >Possui números</li>
-            </ul>
-            <p>Já possui conta? <a href="account.html?m=login" id="dologin">faça login </a></p>
-            <input type="submit" value="Criar conta ">
-        </form>
-    </section>
+        <main>
+            <section id="notlogged">
+                <h1>Você não está logado!</h1>
+                <p>Já possui uma conta? <a href="account.html?m=login" class="aa">Clique aqui para entrar</a></p>
+            </section>
+            <section id="userinterface">
+                <h1 id="emailname">usuarioemail@gmail.com</h1>
+            </section>
+            <section id="no_address">
+                <h2>Você não possui endereço</h2>
+                <a href="dashboard.html?m=addaddress">Clique aqui para adicionar</a>
+            </section>
+            <section id="on_address">
+                <h2 >Endereço</h2>
+                <p id="Estado_label">Estado: </p>
+                <p id="Cidade_label">Cidade: </p>
+                <p id="Bairro_label" >Bairro: </p>
+                <p id="Casa_label" >Casa: </p>
+                <p id="Complemento_label">Complemento: </p>
+                <p id="Cep_label" >Cep: </p>
+            </section>
+            <section id="add_address">
+                <label for="estado">Estado: </label>
+                <select name="estado" id="estado">
+                    <option value="notselected">Não selecionado</option>
+                </select>
+                <label for="cidade">Cidade: </label>
+                <select name="cidade" id="cidade">
+                    <option value="notselected">Não selecionado</option>
+                </select>
+                <label for="bairro">Bairro: </label>
+                <input type="text" id="bairro" placeholder="Insira seu bairro">
+                <label for="rua">Rua: </label>
+                <input type="text" id="rua" placeholder="Insira sua rua">
+                <label for="casa">Casa: </label>
+                <input type="text" name="casa" id="casa" placeholder="Insira o numero da sua casa">
+                <label for="complemento">Complemento: </label>
+                <input type="complemento" id="complemento" placeholder="Insira um complemento">
+                <label for="cep">Cep: </label>
+                <input type="text" name="Cep" id="cep" placeholder="Insira seu cep">
+                <button id="enviar"> Enviar</button>
+            </section>
     <div id="displayhamburguer">
         <button id="quit"><svg width="32px" height="32px" viewBox="0 0 24 24" fill="#f4f4f4" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg></button>
-        <h1> MENU</h1>
+            <h1> MENU</h1>
         <span id="menunave">
             <p> <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg> Conta</p>
+            </svg > Conta</p>
             <ul id="no_account">
                 <li><a href="account.html">Criar conta</a></li>
                 <li><a href="account.html?m=login">Fazer login</a></li>
             </ul>
             <ul id="on_account">
                 <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="" id="logoutbtn">Sair da conta</a></li>
+                <form action="logout.php" id="logoutform" method="post">
+                    <li id="logoutbtn">Sair da conta</li>
+                </form>
                 <li><a href="items_salvos.html">items salvos</a></li>
             </ul>
             <p> <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -101,16 +111,13 @@
                 <li><a href="#">Adicionar endereço</a></li>
             </ul>
         </span>
-
     </div>
+        <span id="carregando">
+            <div id="bola"></div>
+        </span> 
             <span id="displayerrorr">
             <h1 id="erro" >ERRO!</h1>
             <p id="errormsg">Ocorreu um erro ao criar a conta.</p>
             <button id="voltar">&leftarrow;</button>
-        </span>
-        <span id="carregando">
-            <div id="bola"></div>
-        </span>
-    <script src="script/account.js" type="module"></script>
-</body>
-</html>
+            <script src="script/dashboard.js" type="module"></script>
+</main>

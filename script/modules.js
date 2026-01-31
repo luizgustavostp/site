@@ -12,10 +12,26 @@ export async function updateitems() {
         return []; // evita quebrar o app
     }
 }
-export function displayupdate(btn1,btn2,displayurl) {
+export async function displayupdate(btn1,btn2,displayurl) {
     const hamburguerbtn = document.getElementById(btn1)
     const quitbtn = document.getElementById(btn2)
-    
+    console.log("antes da fetch")
+    let logged
+    const me = await fetch("me.php").then(res => res.json()).then(res => {
+        if (res.logged) {
+            document.querySelector("#no_account").style.display = "none"
+            document.querySelector("#on_account").style.display = "block"
+        }
+        else {
+            document.querySelector("#no_account").style.display = "block"
+            document.querySelector("#on_account").style.display = "none"
+        }
+        logged = res
+    })
+    document.querySelector("#logoutbtn").addEventListener("click",async (event) => {
+        document.querySelector("#logoutform").submit()
+    })
+    console.log("depois da fetch")
     hamburguerbtn.addEventListener("click",() => {
         let display = document.getElementById(displayurl)
         console.log("fodase")
@@ -38,6 +54,7 @@ export function displayupdate(btn1,btn2,displayurl) {
             display.style.display = "none"
         }
     })
+    return logged
 }
 
 export function carregardisplays(element,grido,itembase) {

@@ -173,7 +173,7 @@ document.getElementById("login").addEventListener ("submit",async (event) => {
             document.querySelector("#errormsg").textContent = "Login efetuado com sucesso."
             document.getElementById("displayerrorr").style.display = "flex"
             document.querySelector("#voltar").addEventListener("click", function () {
-                window.location = "index.html"
+            window.location = "index.html"
             })
         }
     })
