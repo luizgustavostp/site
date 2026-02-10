@@ -3,7 +3,7 @@ export async function updateitems() {
         const response = await fetch("http://localhost/site/produtos.php");
         const data = await response.json();
         console.log("fodase")
-        sessionStorage.setItem("catalog", JSON.stringify(data));
+        localStorage.setItem("catalog", JSON.stringify(data));
         console.log("fodase2")
 
         return data; // ← AGORA SIM
@@ -13,8 +13,9 @@ export async function updateitems() {
     }
 }
 export async function displayupdate(btn1,btn2,displayurl) {
-    const hamburguerbtn = document.getElementById(btn1)
-    const quitbtn = document.getElementById(btn2)
+    let hamburguerbtn = document.getElementById(btn1)
+    let quitbtn = document.getElementById(btn2)
+    let blur = document.getElementById("blur")
     console.log("antes da fetch")
     let logged
     const me = await fetch("me.php").then(res => res.json()).then(res => {
@@ -65,6 +66,49 @@ export function carregardisplays(element,grido,itembase) {
     itembasechild[9].textContent += "0"
     itembasechild[1].src = element.imagepath;
     itembasechild[3].textContent = element.name;
-    itembasechild[11].src = element.starspath;
+    itembasechild[13].src = element.starspath;
+    itembasechild[11].href = `item.html?id=${element.id}`
+    newitem.addEventListener("click",() => {
+        window.location = `item.html?id=${element.id}`
+    })
+    console.log(itembasechild)
     grido.appendChild(newitem)
+}
+
+export function ativarmenuconfig(displayid,btn1,btn2) {
+    function mudarwall() {
+    const blur = document.querySelector("#blur")
+    let filterdisplay = document.getElementById(displayid)
+    console.log(filterdisplay)
+    let displaystyle = window.getComputedStyle(filterdisplay).display
+    if (displaystyle == "none") {
+        blur.style.visibility = "visible"
+        filterdisplay.style.display = "block"
+    }
+    else {
+        blur.style.visibility = "hidden"
+        filterdisplay.style.display = "none"
+    }
+    }
+    document.getElementById(btn1).addEventListener("click",() => {
+        mudarwall(displayid)
+    })
+    document.getElementById(btn2).addEventListener("click",() => {
+        mudarwall(displayid)
+    })
+}
+export function erro(msg,vis,el) {
+    console.log("consola")
+    const blurr = document.getElementById("blur")
+    el.style.display = "flex"
+    blurr.style.visibility = "visible"
+    console.log("chegou1")
+    document.querySelector("#errormsg").textContent = msg
+    document.querySelector("#errormsgs").textContent = msg
+    el.style.visibility = vis
+    console.log("chegou2")
+    el.style.animationName = "dismsg"
+    el.style.animationDuration = "0.4s"
+    el.style.animationTimingFunction = "ease"
+    console.log("chegou3 ")
 }

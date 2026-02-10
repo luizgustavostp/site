@@ -1,82 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    font-family: "Poppins";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .formulario {
-    height: 412px;
-    width: 412px;
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
     gap: 4px;
+    max-width: 800px;
+    min-width: 600px;
+    padding: 24px;
+    background-color: var(--gray-100);
+    border-radius: 24px;
     flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
     display: flex;
-    height: fit-content ;
-    label {
-        width: 100%;
-    }
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 0px 0px;
     h1 {
-        text-align: center;
-    }
-    p {
-        margin-top: 32px;
-    }
 
+        text-align: center;
+        font-size: 32px;
+    }
+    #p {
+        width: fit-content;
+        margin: 0 auto 24px auto;
+    }
     #security {
         margin: 0;
     }
     input {
+        width: 100%;
+        min-height: 44px;
+        padding: 16px 16px 16px 44px;
+        border-radius: 20px;
+        border: none;
         font-size: 16px;
-        padding: 8px;
-        margin-bottom: 12px;
-        border-radius: 8px;
-        border: 1px solid black;
+        position: relative;
+        background-color: var(--gray-300);
+    }
+    input::placeholder {
+        color: var(--gray-500);
+    }
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px rgb(238, 219, 219) inset;
+    }
+    input:hover,input:focus {
         outline: none;
     }
+    input::selection {
+        background-color: rgba(128, 128, 128, 0.171);
+    }
     input[type="submit"] {
-        
-        margin-top: 20px;
-        background-color: black;
+        border-radius: 28px;
+        min-height: 48px;
+        padding: 16px 24px;
+        margin-top: 24px;
+        background-color: var(--red-600);
         color: white;
-        transition: 200ms;
+        transition: 200ms ease;
         cursor: pointer;
+        display: flex;
+        text-indent: 0;
+        width: 100%;
+    }
+    input[type="submit"]:hover {
+        background-color: var(--red-700);
+    }
+    svg {
+        position: absolute;
+        left: 40px;
+        stroke: var(--gray-500);
+        fill: none;
+        z-index: 5;
+        transform: translateY(32px);
+    }
+    #nomesvg {
+        top: 112px;
+    }
+
+    #emailsvg {
+        top: 180px;
+    }
+    #cpfsvg {
+        top: 244px;
+    }
+    #numerosvg {
+        background-color: transparent !important;
+        top: 312px;
+    }
+    #passsvg1 {
+        top: 372px;
+    }
+    #passsvg2 {
+        top: 440px;
+    }
+    #passsvglogin {
+        top: 184px;
+    }
+    #emailsvglogin {
+        top: 125px;
+    }
+    #bmvnd {
+        width: fit-content;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 32px;
     }
 
 }
-#createaccount {
+#japos {
     margin-top: 32px;
-}
+    margin-bottom: 0px;
 
+}
+a {
+    color: red;
+}
 .did {
     color: gray;
     text-decoration: line-through;
 }
-@media (max-width:500px) { 
-    .formulario {
-    height: 364px;
-    width: 364px;
+body {
+    background-color: var(--red-400);
+    height: fit-content !important;
+    width: 100%;
 }
-}
-#requisitos {
-    display: flex;
-    margin-left: 16px;
-    list-style-type: circle;
-    flex-direction: column;
-    li {
-        font-size: 14px;
+#voltar {
+    svg {
+        fill: white !important;
+        stroke: white !important;
+        margin: 0 !important;
     }
 }
-
+#loginaccount {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) !important;
+}
+#requisitos {
+    margin-top: 16px;
+    font-size: 16px;
+    margin-left: 24px;
+    text-align: start !important;
+    display: flex;
+    align-self: start !important;
+    list-style-type: disc;
+    flex-direction: column;
+    li {
+        font-size: 12px;
+    }
+}
+#aindan {
+    margin-top: 52px;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+a {
+    text-decoration:underline;
+}
 #dologin {
     text-decoration: underline !important;
 }
-.hagaref {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 788px;
+#voltarbtn {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background: var(--gray-100) !important;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 20px !important;
+    outline: none;
+    border: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    svg {
+        margin: 0;
+    }
 }
-.voltarmenu {
-    background-color: black;
-    color: white;
+#voltarbtn:hover {
+    background-color: var(--gray-300) !important;
 }
-#login {
-    position: absolute;
-    top: 300px;
+#Sucesso {
+    transform: translateY(-44px);
+}
+#sucesss {
+    visibility: hidden;
+}
+#errormsgs {
+    transform: translateY(-40px);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+#voltarbtn:hover {
+    background-color: rgba(148, 148, 148, 0.235);
+}
+#create {
+    input {
+        margin-bottom: 4px;
+    }
+
+}
+main,body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+@media (max-width:698px) {
+    .formulario {
+        min-width: 444px;
+    }
+}
+@media (max-width:500px) {
+    .formulario {
+        min-width: 400px;
+        svg {
+            transform: translateY(58px);
+        }
+    }
+    #loginaccount {
+        svg {
+            transform: translateY(32px);
+        }
+    }
+}
+
+@keyframes dismsg {
+    0% {
+        transform: translateY(16px);
+    }
+    100% {
+        transform: translateY(0);;
+    }
 }

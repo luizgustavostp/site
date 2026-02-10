@@ -22,7 +22,7 @@ if (!$email || !$password) {
     exit;
 }
 // Busca usuário
-$sql = "SELECT id, email, password FROM users WHERE email = :email";
+$sql = "SELECT id, email, password, nome FROM users WHERE email = :email";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(":email", $email);
 $stmt->execute();
@@ -48,6 +48,7 @@ if (!password_verify($password, $user["password"])) {
 else {
     $_SESSION["user_id"] = $user["id"];
     $_SESSION["user_email"] = $user["email"];
+    $_SESSION["user_nome"] = $user["nome"];
     echo json_encode([
         "success" => true,
         "message" => "Login realizado"

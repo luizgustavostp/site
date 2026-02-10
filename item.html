@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/modulescss.css">
+    <link rel="stylesheet" href="estilos/item.css">
+</head>
+<body>
+    <header id="header">
+        <ul id="navlist">
+            <button class="navitem" id="hamburguer">
+                <span id="dois"></span>
+                <span id="dois"></span>
+                <span id="dois"></span>
+            </button>
+                <li class="navitem" id="itemlogo">
+                <img src="imgs/logo-w.png" alt="" id="logo">
+                </li>
+                <li class="navitem" id="inputitem">
+                <form id="searchh" action="search.html"><input type="text" id="searchbar" name="q" placeholder="Buscar" autocomplete="off">
+                    <button id="submitbtn" class="bu"><svg width="20px" height="20px" viewBox="0 -0.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Page-1" stroke="solid" stroke-width="3" fill="none" fill-rule="evenodd">
+                        <g id="Dribbble-Light-Preview" transform="translate(-219.000000, -280.000000)">
+                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                        <path d="M184,138.586 L182.5153,140 L176.57545,134.343 L178.06015,132.929 L184,138.586 Z M170.35,132 C167.45515,132 165.1,129.757 165.1,127 C165.1,124.243 167.45515,122 170.35,122 C173.24485,122 175.6,124.243 175.6,127 C175.6,129.757 173.24485,132 170.35,132 L170.35,132 Z M170.35,120 C166.2907,120 163,123.134 163,127 C163,130.866 166.2907,134 170.35,134 C174.4093,134 177.7,130.866 177.7,127 C177.7,123.134 174.4093,120 170.35,120 L170.35,120 Z" id="search_left-[#1506]">
+                        </path>
+                        </g></g></g></svg>
+                    </button>
+                </form>
+                </li>
+            </ul>
+        </header>
+
+
+
+    <main>
+
+
+
+        
+        <section id="product-buy">
+            <div id="carosel-images">
+                <div id="imgs">
+                    <img id="img1" src="assets/products/asad_lataffa/asad.webp" alt="">
+                    <img id="img2" src="assets/products/asad_lataffa/asad-lataffa-notas.webp" alt="">
+                </div>
+            </div>
+            <div id="principal-infos">
+                <h1 id="tittle-product">Asad lataffa</h1>
+                <p id="pro" >o pedido é adicionado a opção visualisar pedidos, no menu de perfil do usuario.</p>
+
+                <h1 id="formas-de-pagamento">Formas de pagamento</h1>
+                <div id="formas-display">
+                    <div id="pix">pix</div>
+                    <div id="cartão">credito</div>
+                    <div id="cartão">débito</div>
+                </div>
+                                <h2>Quantidade </h2>
+                <div id="quantidadeinput">
+                    <button>-</button>
+                    <p>1</p>
+                    <button>+</button>
+                </div>
+                <div id="pri">
+                    <h1>Preço</h1>
+                    <h2 id="price-product">999,99</h2>
+                </div>
+                <div id="buttons">
+                    <button id="comprar">comprar</button>
+                        <button id="adicionar-carrinho" >
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+
+
+    <div id="displayhamburguer">
+            <h1> MENU</h1>
+        <span id="menunave">
+            <ul><a id="quit">Voltar ao inicio</a></ul>
+            <p> <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg > Conta</p>
+            <ul id="no_account">
+                <li><a href="account.html">Criar conta</a></li>
+                <li><a href="account.html?m=login">Fazer login</a></li>
+            </ul>
+            <ul id="on_account">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <form action="logout.php" id="logoutform" method="post">
+                    <li id="logoutbtn">Sair da conta</li>
+                </form>
+                <li><a href="items_salvos.html">items salvos</a></li>
+            </ul>
+            <p> <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                <style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style>
+                </defs>
+                <g id="cart">
+                <circle class="cls-1" cx="10.07" cy="20.59" r="1.91"/>
+                <circle class="cls-1" cx="18.66" cy="20.59" r="1.91"/>
+                <path class="cls-1" d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10"/>
+                <polyline class="cls-1" points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91"/>
+                </g>
+                </svg> Carrinho</p>
+            <ul>
+                <li><a href="#">Visualizar carrinho</a></li>
+                <li><a href="#">Adicionar endereço</a></li>
+            </ul>
+        </span>
+    </div>
+        <span id="carregando">
+            <div id="bola"></div>
+        </span> 
+            <script src="script/item.js" type="module"></script>
+</main>
+
+                          <aside id="menu-mobile">
+                <ul>
+                    <li id="inicio-mobile-btn" ><a href="index.html" >
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 21.0001V15.0001H10V21.0001M19 9.77818V16.2001C19 17.8802 19 18.7203 18.673 19.362C18.3854 19.9265 17.9265 20.3855 17.362 20.6731C16.7202 21.0001 15.8802 21.0001 14.2 21.0001H9.8C8.11984 21.0001 7.27976 21.0001 6.63803 20.6731C6.07354 20.3855 5.6146 19.9265 5.32698 19.362C5 18.7203 5 17.8802 5 16.2001V9.77753M21 12.0001L15.5668 5.96405C14.3311 4.59129 13.7133 3.9049 12.9856 3.65151C12.3466 3.42894 11.651 3.42899 11.0119 3.65165C10.2843 3.90516 9.66661 4.59163 8.43114 5.96458L3 12.0001" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg><p>Inicio</p></a>
+                    </li>
+                    <li id="search-mobile-btn"><a href="search.html?q=">
+                            <svg width="24px" height="24px" viewBox="0 -0.5 25 25"xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                            <g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 10.7655C5.50003 8.01511 7.44296 5.64777 10.1405 5.1113C12.8381 4.57483 15.539 6.01866 16.5913 8.55977C17.6437 11.1009 16.7544 14.0315 14.4674 15.5593C12.1804 17.0871 9.13257 16.7866 7.188 14.8415C6.10716 13.7604 5.49998 12.2942 5.5 10.7655Z" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/> <path d="M17.029 16.5295L19.5 19.0005" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/> </g>
+                            </svg>
+                            <p>Buscar</p></a>
+                        </li>
+                    <li id="carrinho-mobile-btn"><a href="carrinho.html">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                        <g id="SVGRepo_iconCarrier"> <path d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/> </g>
+                        </svg>
+                    <p>carrinho</p></a>
+                </li>
+                    <li id="perfil-mobile-btn" ><a href="perfil.html">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                    <g id="SVGRepo_iconCarrier"> <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/> <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z"  stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/> </g>
+                    </svg>
+                    <p>Perfil</p>
+                </a>
+                </li>
+                </ul>
+            </aside>

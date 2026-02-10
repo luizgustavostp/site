@@ -10,7 +10,8 @@ else {
     "logged" => true,
     "user" => [
         "id" => $_SESSION["user_id"],
-        "email" => $_SESSION["user_email"]
+        "email" => $_SESSION["user_email"],
+        "nome" => $_SESSION["user_nome"]
     ]
 ]);
 exit;

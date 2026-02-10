@@ -9,7 +9,7 @@ $email   = $data["email"]   ?? "";
 $password = $data["password"] ?? "";
 $cpf     = $data["cpf"]     ?? "";
 $numero  = $data["numero"]  ?? "";
-
+$nome = $data["nome"]  ?? "";
 // Validação básica
 if (!$email || !$password || !$cpf || !$numero) {
     echo json_encode([
@@ -48,7 +48,7 @@ $stmtn = $pdo->prepare($sqln);
 $stmtn->bindParam(":numero", $numero);
 $stmtn->execute();
 
-if ($stmt->rowCount() > 0) {
+if ($stmtn->rowCount() > 0) {
     echo json_encode([
         "success" => false,
         "message" => "numero de celular já cadastrado"
@@ -58,13 +58,14 @@ if ($stmt->rowCount() > 0) {
 // Criptografa a senha
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 // Insere usuário
-$sql = "INSERT INTO users (email, password, numero, cpf)
-        VALUES (:email, :password, :numero, :cpf)";
+$sql = "INSERT INTO users (nome, email, password, numero, cpf)
+        VALUES (:nome, :email, :password, :numero, :cpf)";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(":email", $email);
 $stmt->bindParam(":password", $hashedPassword);
 $stmt->bindParam(":numero", $numero);
 $stmt->bindParam(":cpf", $cpf);
+$stmt->bindParam(":nome", $nome);
 
 if ($stmt->execute()) {
     echo json_encode([
