@@ -2,16 +2,51 @@ main {
     background-color: white;
     height: 100dvh;
 }
+
 #imgs {
-    width: 564px;
-    overflow: hidden;
-    height: 564px;
-    margin: 20px;
-    border-radius: 12px;
-    border: 1px solid var(--gray-500);
+    width: 200%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    transition: transform 0.3s ease;
+    gap: 0 !important;
     img {
+        height: auto;
+        object-fit: contain;
+        aspect-ratio: 1 / 1; /* ou 4 / 5, depende do produto */
+        width: 100%;
+        border: none;
+    }
+}
+#carosel-images {
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    border: 1px solid black;
+    margin: 20px;
+    #buttons {
         height: 500px;
-        margin: 32px;
+        width: 500px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        justify-content:space-between;
+        button {
+            height: 80px;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            justify-content: center;
+            background-color: transparent !important;
+        }
+        svg {
+            margin: 0 !important;
+        }
     }
 }
 #product-buy {
@@ -19,10 +54,9 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 #principal-infos {
-    height: 564px;
+    height: 500px;
     width: 500px;
     display: flex;
     flex-direction: column;
@@ -49,7 +83,7 @@ main {
         margin-bottom: 12px;
     }
 }
-#buttons {
+#buttonss {
     width: 100%;
     margin-top: auto;
     display: grid;
@@ -85,19 +119,7 @@ main {
         }
     }
 }
-#quantidadeinput {
-    background-color: var(--gray-100);
-    display: flex;
-    outline: 1px solid var(--gray-300);
-    border-radius: 16px;
-    margin-top: 8px;
-    gap: 4px;
-    align-items: center;
-    justify-content: center;
-    button{
-        background-color:var(--gray-100) !important;
-    }
-}
+
 #tittle-product {
     margin-top: 0 !important;
 }
@@ -107,27 +129,29 @@ main {
     justify-content: center;
     gap: 4px;
     div {
+        cursor: pointer;
         background-color: var(--gray-100);
         padding: 12px 24px;
         border-radius: 12px;
     }
 }
-#pix {
+.method {
     background-color: var(--red-200) !important;
 }
 #pro {
     display: none;
 }
 @media (max-width:1000px) {
-    #imgs {
-        width: 464px;
-        height: 464px;
-        img {
-            width: 400px;
-            height: 400px;
-            object-fit: contain;
-        }
+    #carosel-images {
+        height: 400px;
+        width: 400px;
+        #buttons {
+        height: 368px;
+        width: 368px;
+        margin: 16px;
     }
+    }
+
     #principal-infos {
         height: 464px;
     }
@@ -141,7 +165,7 @@ main {
         display: flex;
         flex-direction: column;
     }
-    #buttons {
+    #buttonss {
         width: 100vw;
         position: fixed;
         bottom: 0px;
@@ -157,7 +181,7 @@ main {
     }
 }
 @media (max-width:700px)  {
-    #buttons {
+    #buttonss {
         bottom: 72px;
     }
 }
@@ -192,5 +216,40 @@ main {
     }
     #price-product::before {
         content: "... ";
+    }
+}
+#Adicionado-sucesso {
+    height: 540px;
+    width: 344px;
+    border-radius: 32px;
+    padding: 24px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    z-index: 9999;
+    transform: translate(-50%,-50%);
+    svg {
+        margin: 0 !important;
+    }
+    h2 {
+        font-size: 16px;
+        font-weight: 300    ;
+    }
+    button {
+        position: fixed;
+        bottom: 24px;
+        left: 24px;
+        width: calc(100% - 48px);
+        padding: 24px;
+        font-size: 16px;
+        color: white;
+        border-radius: 24px;
+        background-color: var(--red-400);
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        justify-content: center;
     }
 }

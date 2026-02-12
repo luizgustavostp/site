@@ -1,5 +1,6 @@
 :root {
   /* Vermelhos */
+  --green:#2AC9B9;
   --red-900: #5F0A14; /* vinho escuro (texto / hover forte) */
   --red-800: #7A0D1B;
   --red-700: #94101F;
@@ -101,5 +102,38 @@
         display: flex;
         width: 100%;
         border: none;
+    }
+}
+#quantidadeinput {
+    background-color: var(--gray-100);
+    display: flex;
+    outline: 1px solid var(--gray-300);
+    border-radius: 16px;
+    margin-top: 8px;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    button{
+        background-color:var(--gray-100) !important;
+    }
+}
+.quantidadeinput {
+    background-color: var(--gray-100);
+    display: flex;
+    outline: 1px solid var(--gray-300);
+    border-radius: 16px;
+    margin-top: 8px;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    button{
+        padding: 0px !important;
+        height: 24px !important;
+        width: 24px !important;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:var(--gray-100) !important;
     }
 }

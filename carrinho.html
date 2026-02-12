@@ -1,13 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Pure - perfumaria</title>
+    <title>Pure - Pesquisa</title>
     <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="estilos/style.css">
+
     <link rel="stylesheet" href="estilos/modulescss.css">
+    <link rel="stylesheet" href="estilos/carrinho.css">
 </head>
 <body>
     <header id="header">
@@ -34,58 +35,36 @@
                 </li>
             </ul>
         </header>
-    <div id="navfds">
-        <ul id="navegation">
-            <li class="navegationitem" id="femininobtn"> <a href="#feminino">
-                <svg height="24px" width="24px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                    viewBox="0 0 511.998 511.998" xml:space="preserve">
-                <g>
-                <g>
-                <path d="M508.459,234.673c-58.646-74.851-105.918-112.122-148.771-117.296c-35.93-4.334-60.763,15.159-78.886,29.397
-                    c-9.63,7.567-18.728,14.714-24.801,14.714c-6.072,0-15.169-7.147-24.801-14.714c-18.122-14.236-42.951-33.738-78.885-29.397
-                    C109.463,122.55,62.19,159.822,3.544,234.673c-4.722,6.025-4.729,14.558,0,20.594c24.84,31.703,63.307,65.537,102.899,90.504
-                    c35.787,22.566,90.785,49.467,149.559,49.467c58.776,0,113.773-26.901,149.559-49.467c39.593-24.967,78.06-58.799,102.899-90.503
-                    C513.205,249.211,513.151,240.661,508.459,234.673z M256.002,361.845c-76.543,0-155.348-53.781-201.94-100.179h115.839
-                    c13.38,0,25.958,5.21,35.419,14.671c16.341,16.342,33.511,24.511,50.681,24.511c17.172,0,34.342-8.17,50.683-24.511
-                    c9.46-9.46,22.039-14.671,35.419-14.671h115.839C411.352,308.064,332.546,361.845,256.002,361.845z M342.104,228.274
-                    c-22.3,0-43.264,8.683-59.031,24.451c-19.482,19.48-34.661,19.478-54.141,0c-15.767-15.768-36.731-24.451-59.031-24.451H51.956
-                    c41.566-48.268,76.601-74.394,104.362-77.744c22.204-2.695,37.771,9.553,54.254,22.503c13.672,10.74,27.81,21.848,45.43,21.848
-                    c17.621,0,31.759-11.108,45.43-21.848c16.487-12.952,32.063-25.186,54.256-22.503c27.759,3.35,62.794,29.476,104.36,77.744
-                    H342.104z"/>
-                    </g>
-                    </g>
-                    </svg>
-                Feminino</a>
-            </li>
-            <li class="navegationitem" id="masculinobtn"><a href="search.html?genero=masculino&q= ">
-                <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                <style>.cls-1{stroke-linecap:square;stroke-miterlimit:10;stroke-width:1.91px;}</style>
-                </defs>
-                <g id="tie">
-                <path class="cls-1" d="M15.82,3.79v.09a2.38,2.38,0,0,1-.25,1l-.8,1.57a3.24,3.24,0,0,1-.49.7,3.1,3.1,0,0,1-4.56,0,3.17,3.17,0,0,1-.48-.71L8.42,4.81a2.35,2.35,0,0,1-.24-1A2.29,2.29,0,0,1,10.47,1.5h3.06A2.3,2.3,0,0,1,15.82,3.79Z"/>
-                <path class="cls-1" d="M16.77,19.64,12,22.5,7.23,19.64,9.72,7.17a3.1,3.1,0,0,0,4.56,0Z"/>
-                </g>
-                </svg>
-                Masculino</a>
-            </li>
-            <li class="navegationitem" id="refrescantebtn"><a href="search.html?categoria=fresco&q= ">
-                <svg width="24px" height="24px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.643 6.357c1.747-1.5 3.127-2.686 6.872-.57 1.799 1.016 3.25 1.4 4.457 1.398 2.115 0 3.486-1.176 4.671-2.193a1.037 1.037 0 0 0 .122-1.439.987.987 0 0 0-1.41-.125c-1.746 1.502-3.127 2.688-6.872.57-4.948-2.793-7.266-.803-9.128.797a1.037 1.037 0 0 0-.121 1.439.986.986 0 0 0 1.409.123zm14.712 2.178c-1.746 1.5-3.127 2.688-6.872.57-4.948-2.795-7.266-.804-9.128.795a1.037 1.037 0 0 0-.121 1.439.986.986 0 0 0 1.409.125c1.747-1.501 3.127-2.687 6.872-.572 1.799 1.018 3.25 1.4 4.457 1.4 2.115 0 3.486-1.176 4.671-2.195a1.035 1.035 0 0 0 .122-1.438.986.986 0 0 0-1.41-.124zm0 5.106c-1.746 1.502-3.127 2.688-6.872.572-4.948-2.795-7.266-.805-9.128.795a1.037 1.037 0 0 0-.121 1.439.985.985 0 0 0 1.409.123c1.747-1.5 3.127-2.685 6.872-.57 1.799 1.016 3.25 1.4 4.457 1.4 2.115 0 3.486-1.178 4.671-2.195a1.037 1.037 0 0 0 .122-1.439.988.988 0 0 0-1.41-.125z"/></svg>
-                Fresco</a>
-            </li>
-            <li class="navegationitem" id="amadeiradobtn"><a href="search.html?categoria=amadeirado&q= ">
-                <svg width="24px" height="24px" viewBox="0 0 24 24" id="Layer_2" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><circle class="cls-1" cx="6.82" cy="17.18" r="5.32"/><circle class="cls-1" cx="6.82" cy="17.18" r="2.35"/><path class="cls-1" d="M20.94,10.59,10.59,20.94a5.32,5.32,0,0,0-7.53-7.53L13.41,3.06a5.32,5.32,0,0,1,7.53,7.53Z"/><line class="cls-1" x1="9.35" y1="12.41" x2="12.79" y2="8.97"/><line class="cls-1" x1="21.94" y1="4.36" x2="18.18" y2="8.12"/><line class="cls-1" x1="13.73" y1="13.18" x2="17.06" y2="9.85"/><line class="cls-1" x1="15.76" y1="5.41" x2="19.06" y2="2.12"/></svg>
-                Amadeirado</a>
-            </li>
-            <li class="navegationitem" id="citricobtn"><a id="citric" href="search.html?categoria=citrico&q= ">
-                <svg id="cit" width="20px" height="20px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M484.112 27.889C455.989-.233 416.108-8.057 387.059 8.865 347.604 31.848 223.504-41.111 91.196 91.197-41.277 223.672 31.923 347.472 8.866 387.058c-16.922 29.051-9.1 68.932 19.022 97.054 28.135 28.135 68.011 35.938 97.057 19.021 39.423-22.97 163.557 49.969 295.858-82.329 132.474-132.477 59.273-256.277 82.331-295.861 16.922-29.05 9.1-68.931-19.022-97.054zm-22.405 72.894c-38.8 66.609 45.6 165.635-74.845 286.08-120.44 120.443-219.475 36.048-286.076 74.843-22.679 13.207-64.035-27.241-50.493-50.488 38.8-66.609-45.6-165.635 74.845-286.08C245.573 4.702 344.616 89.086 411.219 50.292c22.73-13.24 64.005 27.288 50.488 50.491zm-169.861 8.736c1.37 10.96-6.404 20.957-17.365 22.327-54.846 6.855-135.779 87.787-142.635 142.635-1.373 10.989-11.399 18.734-22.326 17.365-10.961-1.37-18.735-11.366-17.365-22.326 9.162-73.286 104.167-168.215 177.365-177.365 10.953-1.368 20.956 6.403 22.326 17.364z"/></svg>
-                Citrico</a>
-            </li>
-        </ul>
-    </div>
-                
-    <div id="displayhamburguer">
-
+        <main>
+            <section id="carrinho" >
+                <h1 id="tit" >Carrinho</h1>
+                <div class="product-carrinho" style="display: none;">
+                    <img src="assets/products/asad_lataffa/asad.webp" alt="">
+                    <div id="texts">
+                        <h1 class="name-product">Asad Lataffa</h1>
+                        <h2 class="price-product">199,99</h2>
+                    </div>
+                    <div class="quantidadeinput">
+                    <button class="quantidade-menos">-</button>
+                    <p class="quantidade-text">1</p>
+                    <button class="quantidade-mais">+</button>
+                    </div>
+                    <button class="apagar">
+                        <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L17.1991 18.0129C17.129 19.065 17.0939 19.5911 16.8667 19.99C16.6666 20.3412 16.3648 20.6235 16.0011 20.7998C15.588 21 15.0607 21 14.0062 21H9.99377C8.93927 21 8.41202 21 7.99889 20.7998C7.63517 20.6235 7.33339 20.3412 7.13332 19.99C6.90607 19.5911 6.871 19.065 6.80086 18.0129L6 6M4 6H20M16 6L15.7294 5.18807C15.4671 4.40125 15.3359 4.00784 15.0927 3.71698C14.8779 3.46013 14.6021 3.26132 14.2905 3.13878C13.9376 3 13.523 3 12.6936 3H11.3064C10.477 3 10.0624 3 9.70951 3.13878C9.39792 3.26132 9.12208 3.46013 8.90729 3.71698C8.66405 4.00784 8.53292 4.40125 8.27064 5.18807L8 6M14 10V17M10 10V17" stroke="var(--gray-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+            <section id="total">
+                <div id="txt">
+                    <h1>Preço total</h1>
+                    <h2 id="pricetotal">R$0</h2>
+                </div>
+                <button>comprar</button>
+            </section>
+            
+                <div id="displayhamburguer">
             <h1> MENU</h1>
         <span id="menunave">
             <ul><a id="quit">
@@ -145,65 +124,17 @@
             </ul>
         </span>
     </div>
-    
-    <main>
-        <section id="rodapefalso"></section>
-        <h1 id="em-alta"> MAIS VISTOS<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 6V18M12 18L7 13M12 18L17 13" stroke="var(--gray-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg></h1>
-        <section id="rodape">
-                <button class="carosselbtn" id="carossel-direita" style="position: absolute;"><svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
-                    xmlns="http://www.w3.org/2000/svg" style="margin: 0;"  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-                    width="24px" height="24px" viewBox="0 0 42 42" xml:space="preserve">
-                <polygon fill-rule="evenodd" points="27.066,1 7,21.068 26.568,40.637 31.502,35.704 16.865,21.068 32,5.933 "/>
-                </svg>
-                </button>
-                <button class="carosselbtn" id="carossel-esquerda" style="position: absolute;scale: -1; ">
-                    <svg version="1.1" baseProfile="tiny" style="margin: 0;" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-                    width="24px" height="24px" viewBox="0 0 42 42" xml:space="preserve">
-                <polygon fill-rule="evenodd" points="27.066,1 7,21.068 26.568,40.637 31.502,35.704 16.865,21.068 32,5.933 "/>
-                </svg>
-                </button>
-            <div id="carrosel">
-                <img id="lataffa" src="imgs/lataffa-banner(satured.webp" alt="">
-                <img id="banoffi"src="imgs/banoffi.webp" alt="" class="imgact">
-                <img id="vulcan"src="imgs/vulcan-banner.webp" alt="">
-                <img id="jubilant"src="imgs/jubilant-noir.webp" alt="">
-                <img id="lataffa2"src="imgs/lataffa-banner(satured.webp" alt="">
-            </div>
-        </section>
-        <section id="titlefemele">
-            <h1 id="tittlefeminino">
-                    Feminino.
-            </h1>
-                <p class="description" style="line-height: 140%;">para a melhor mulher do mundo.
-                </p>
-        </section>
-            <article id="categoriafeminina">
-                <div id="gridmulher" class="gridd">
-                    <span class="displayitem">
-                        <img src="" alt="" class="imgperfume">
-                        <h2 class="tittleperfumeitem"></h2>
-                        <p class="label">a partir de</p>
-                        <p class="price">R$ </p>
-                        <p class="label2">ou 10X de R$</p>
-                        <a href=""><button>Comprar</button></a>
-                        <img src="imgs/stars.webp" alt="" class="stars">
-                    </span>
-                </div>
-            </article>
 
-        <script src="script/script.js" type="module"></script>
-    </main>
-                <aside id="menu-mobile">
+        <div id="blur"></div>
+        </main>
+                        <aside id="menu-mobile">
                 <ul>
-                    <li id="inicio-mobile-btn" class="actives" ><a href="index.html" >
+                    <li id="inicio-mobile-btn" ><a href="index.html" >
                         <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14 21.0001V15.0001H10V21.0001M19 9.77818V16.2001C19 17.8802 19 18.7203 18.673 19.362C18.3854 19.9265 17.9265 20.3855 17.362 20.6731C16.7202 21.0001 15.8802 21.0001 14.2 21.0001H9.8C8.11984 21.0001 7.27976 21.0001 6.63803 20.6731C6.07354 20.3855 5.6146 19.9265 5.32698 19.362C5 18.7203 5 17.8802 5 16.2001V9.77753M21 12.0001L15.5668 5.96405C14.3311 4.59129 13.7133 3.9049 12.9856 3.65151C12.3466 3.42894 11.651 3.42899 11.0119 3.65165C10.2843 3.90516 9.66661 4.59163 8.43114 5.96458L3 12.0001" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg><p>Inicio</p></a>
                     </li>
-                    <li id="search-mobile-btn"><a href="search.html?q=">
+                    <li id="search-mobile-btn"  ><a href="search.html?q=">
                             <svg width="24px" height="24px" viewBox="0 -0.5 25 25"xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"/>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
@@ -211,7 +142,7 @@
                             </svg>
                             <p>Buscar</p></a>
                         </li>
-                    <li id="carrinho-mobile-btn"><a href="carrinho.html">
+                    <li id="carrinho-mobile-btn" class="actives"><a href="carrinho.html">
                         <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"/>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
@@ -229,9 +160,10 @@
                 </a>
                 </li>
                 </ul>
-            </aside>
+            </aside> 
                         <span id="carregando">
                 <div id="bola"></div>
             </span>
+        <script src="script/carrinho.js" type="module"></script>
 </body>
 </html>
