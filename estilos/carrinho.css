@@ -40,6 +40,7 @@
 main {
     height: 100vh;
     margin-bottom: 72px;
+    background-color: #f7f7f7 !important;
 }
 #tit  {
     font-size: 28px;
@@ -51,11 +52,11 @@ main {
     padding: 16px;
     justify-content: space-between;
     align-content: center;
-    background-color: var(--red-400);
+    background-color: var(--red-500);
     width: 100%;
     display: flex;
     position: fixed;
-    bottom: 72px;
+    bottom: 0px;
     gap: 16px;
     h1 {
         font-size: 16px;
@@ -93,5 +94,10 @@ main {
         margin: 0 !important;
         height: 24px;
         width: 24px;
+    }
+}
+@media (max-width:700px) {
+    #total {
+        bottom: 72px;
     }
 }

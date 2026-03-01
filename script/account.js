@@ -5,7 +5,7 @@ const createaccount = document.getElementById("createaccount")
 const displayerrorr = document.getElementById("errod")
 const carregando = document.getElementById("carregando")
 const sucess = document.getElementById("sucesss")
-
+const blurr = document.getElementById("blur")
 loginaccount.style.visibility = "hidden"
 createaccount.style.visibility = "hidden"
 displayerrorr.style.visibility = "hidden"
@@ -16,7 +16,6 @@ function carregartudo() {
         loginaccount.style.visibility = "visible"
         createaccount.style.visibility = "hidden"
         createaccount.remove()
-        console.log("fodase1")
     }
     else {
         createaccount.style.visibility = "visible"
@@ -83,12 +82,10 @@ inputzao.addEventListener("input",() => {
 document.getElementById("voltar").addEventListener("click",() => {
     displayerrorr.style.display = "none"
     blurr.style.visibility = "hidden"
-    displayerrorr.style.animationName = ""
 })
 document.getElementById("voltarbtnn").addEventListener("click",() => {
     sucess.style.display = "none"
     blurr.style.visibility = "hidden"
-    sucess.style.animationName = ""
 })
 document.getElementById("create").addEventListener("submit", async (event) => {
     event.preventDefault()
@@ -104,9 +101,6 @@ document.getElementById("create").addEventListener("submit", async (event) => {
     }
     else if (password == "" || email == "" || numero == "" || cpf == "") {
         erro("Erro ao criar conta,  conclua todos os campos.","visible",displayerrorr)
-    }
-    if (name.length < 8) {
-        erro("Erro ao criar conta,  nome precisa ter 8 caracteres ou mais","visible",displayerrorr)
     }
     else {
         carregando.style.display = "flex"
@@ -129,7 +123,7 @@ document.getElementById("create").addEventListener("submit", async (event) => {
             console.log("enviando fetch")
             carregando.style.display = "flex"
             console.log("antesdafetch ")
-            await fetch("createaccount.php", {
+            await fetch("api/createaccount.php", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json"
@@ -157,7 +151,6 @@ document.getElementById("create").addEventListener("submit", async (event) => {
             })
                 }
             })
-            console.log("fetch enviado")
     }
     }
 })
@@ -167,7 +160,7 @@ document.getElementById("login").addEventListener ("submit",async (event) => {
     let senhainput = document.getElementById("senha").value
     console.log(emailinput,senhainput)
     carregando.style.display = "flex"
-    await fetch("login.php", {
+    await fetch("api/login.php", {
         method: "POST",
         headers: {"Content-Type": "Application/json"},
         body: JSON.stringify({

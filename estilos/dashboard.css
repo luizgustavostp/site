@@ -13,7 +13,7 @@ section {
 
 
 .display {
-    background-color: white;
+    background-color: #f7f7f7;
     justify-content: center;
     flex-direction: column;
     position: absolute;
@@ -82,7 +82,7 @@ section {
 #gerenciar-endereco {
     flex-direction: column;
     text-align: start;
-    background-color: white;
+    background-color: #f7f7f7;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -144,9 +144,6 @@ section {
     }
 }
 @media (max-width:700px) {
-    #user-interface {
-        width: 380px !important;
-    }
 }
 #displayerrorr {
     top: 70% !important;
@@ -154,8 +151,8 @@ section {
 #not-logged {
     position: absolute; 
     left: 50%;
-    background-color: white;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    background-color: #f7f7f7;
+    border: 2px solid var(--gray-100);
     width: 366px;
     height: fit-content;
     top: 50%;
@@ -169,6 +166,7 @@ section {
     }
     p {
         margin-bottom: 12px;
+        color: var(--gray-700);
     }
     h1 {
         font-size: 24px;
@@ -192,7 +190,7 @@ section {
 #user-logged {
     visibility: visible !important;
     max-width: 800px !important;
-    margin: auto;
+    margin: 24px;
     text-align: start !important;
     h1 {
         text-align: center;
@@ -208,10 +206,11 @@ section {
             font-size: 16px;
             cursor: pointer;
             padding: 20px;
-            border-radius: 24px;
+            border-radius: 16px;
             transition: 200ms;
             background-color: var(--gray-100);
             display: flex;
+            color: var(--gray-700);
             align-items: center;
             text-indent: 8px;
             border-bottom: 2px solid var(--gray-300);
@@ -224,11 +223,6 @@ section {
 main {
     height: 100dvh;
 }
-@media (max-width:700px) {
-    #user-logged {
-        width: 388px;
-    }
-}
 #gerenciar-endereco-quit {
     margin-top: 16px;
 }
@@ -239,7 +233,7 @@ main {
     justify-content: center;
     position: absolute;
     z-index: 999;
-    background-color: white;
+    background-color: #f7f7f7;
     left: 50%;
     top: 50% ;
     padding: 24px;
@@ -281,7 +275,7 @@ main {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    background-color: white;
+    background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
     padding: 32px;
@@ -358,4 +352,9 @@ main {
         padding: 24px;
     }
 
+}
+main {
+    padding: 0 !important;
+    height: 732px;
+    background-color: #f7f7f7 !important;
 }

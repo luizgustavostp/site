@@ -14,7 +14,7 @@ $nome = $data["nome"]  ?? "";
 if (!$email || !$password || !$cpf || !$numero) {
     echo json_encode([
         "success" => false,
-        "msg" => "Preencha todos os campos"
+        "msg" => "Preencha todos os campos, não foi possivel realizar o cadastro"
     ]);
     exit;
 }
@@ -27,7 +27,7 @@ $stmtm->execute();
 if ($stmtm->rowCount() > 0) {
     echo json_encode([
         "success" => false,
-        "message" => "Email já cadastrado"
+        "message" => "Email já cadastrado, não foi possivel realizar o cadastro"
     ]);
     exit;
 }
@@ -39,7 +39,7 @@ $stmtc->execute();
 if ($stmtc->rowCount() > 0) {
     echo json_encode([
         "success" => false,
-        "message" => "cpf já cadastrado"
+        "message" => "CPF já cadastrado, não foi possivel realizar o cadastro"
     ]);
     exit;
 }
@@ -51,7 +51,7 @@ $stmtn->execute();
 if ($stmtn->rowCount() > 0) {
     echo json_encode([
         "success" => false,
-        "message" => "numero de celular já cadastrado"
+        "message" => "numero de celular já cadastrado, não foi possivel realizar o cadastro"
     ]);
     exit;
 }
@@ -74,7 +74,7 @@ if ($stmt->execute()) {
 } else {
     echo json_encode([
         "success" => false,
-        "message" => "Erro ao criar conta"
+        "message" => "Erro ao criar conta, não foi possivel realizar o cadastro"
     ]);
 }
 

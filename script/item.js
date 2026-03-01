@@ -1,3 +1,4 @@
+import { displayupdate } from "./modules.js"
 let price
 let id
 const sucessAdded = document.getElementById("Adicionado-sucesso")
@@ -51,10 +52,12 @@ let quantidade = 1
 
 console.log(price)
 menos.addEventListener("click",() => {
-    quantidade--
-    text.textContent = quantidade
-    document.getElementById("price-product").textContent = "R$ "
-    document.getElementById("price-product").textContent += price * quantidade
+    if (quantidade > 1) {
+        quantidade--
+        text.textContent = quantidade
+        document.getElementById("price-product").textContent = "R$ "
+        document.getElementById("price-product").textContent += price * quantidade
+    }
 })
 
 mais.addEventListener("click",() => {
@@ -86,7 +89,7 @@ const carrinhobtn = document.getElementById("adicionar-carrinho")
 carrinhobtn.addEventListener("click",() => {
     let carrinho = JSON.parse(localStorage.getItem("cart"))
     console.log(carrinho)
-    if (carrinho) {
+    if (carrinho && !carrinho.filter(item => item.name == document.getElementById("tittle-product").textContent)) {
         carrinho.push({
             quantidade,id
         })
@@ -111,3 +114,5 @@ okbtn.addEventListener("click",() => {
     document.getElementById("blur").style.visibility = "hidden"
     sucessAdded.style.display = "none"
 })
+
+displayupdate("hamburguer","quit","displayhamburguer")

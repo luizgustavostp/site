@@ -36,7 +36,7 @@
     input {
         width: 100%;
         min-height: 44px;
-        padding: 16px 16px 16px 44px;
+        padding: 16px;
         border-radius: 20px;
         border: none;
         font-size: 16px;
@@ -46,8 +46,13 @@
     input::placeholder {
         color: var(--gray-500);
     }
-    input:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0 30px rgb(238, 219, 219) inset;
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:active,
+    input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 1000px var(--gray-300) inset !important;
+        -webkit-text-fill-color: #000 !important;
+        transition: background-color  5000s ease-in-out 0s;
     }
     input:hover,input:focus {
         outline: none;
@@ -72,48 +77,25 @@
         background-color: var(--red-700);
     }
     svg {
-        position: absolute;
-        left: 40px;
         stroke: var(--gray-500);
         fill: none;
         z-index: 5;
-        transform: translateY(32px);
-    }
-    #nomesvg {
-        top: 112px;
-    }
 
-    #emailsvg {
-        top: 180px;
     }
-    #cpfsvg {
-        top: 244px;
+    .formin {
+        background-color: var(--gray-300);
+        padding: 0 32px;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        svg {
+            
+        }
     }
-    #numerosvg {
-        background-color: transparent !important;
-        top: 312px;
-    }
-    #passsvg1 {
-        top: 372px;
-    }
-    #passsvg2 {
-        top: 440px;
-    }
-    #passsvglogin {
-        top: 184px;
-    }
-    #emailsvglogin {
-        top: 125px;
-    }
-    #bmvnd {
-        width: fit-content;
-        margin: auto;
-        text-align: center;
-        margin-bottom: 32px;
-    }
-
 }
 #japos {
+    color: var(--gray-700);
     margin-top: 32px;
     margin-bottom: 0px;
 
@@ -153,6 +135,7 @@ body {
     list-style-type: disc;
     flex-direction: column;
     li {
+        color: var(--gray-500);
         font-size: 12px;
     }
 }
@@ -160,6 +143,7 @@ body {
     margin-top: 52px;
     margin-bottom: 8px;
     font-size: 16px;
+    color: var(--gray-700);
 }
 a {
     text-decoration:underline;
@@ -168,10 +152,15 @@ a {
     text-decoration: underline !important;
 }
 #voltarbtn {
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.2);
     background: var(--gray-100) !important;
-    padding: 8px 12px;
-    border-radius: 50%;
+    height: 24;
+    width: 24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 8px;
     cursor: pointer;
     margin: 20px !important;
     outline: none;
@@ -195,7 +184,7 @@ a {
 }
 #errormsgs {
     transform: translateY(-40px);
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    
 }
 #voltarbtn:hover {
     background-color: rgba(148, 148, 148, 0.235);
@@ -207,7 +196,6 @@ a {
 
 }
 main,body {
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -215,28 +203,8 @@ main,body {
 }
 @media (max-width:698px) {
     .formulario {
-        min-width: 444px;
-    }
-}
-@media (max-width:500px) {
-    .formulario {
-        min-width: 400px;
-        svg {
-            transform: translateY(58px);
-        }
-    }
-    #loginaccount {
-        svg {
-            transform: translateY(32px);
-        }
-    }
-}
-
-@keyframes dismsg {
-    0% {
-        transform: translateY(16px);
-    }
-    100% {
-        transform: translateY(0);;
+        min-width: 100vw;
+        min-height: 100vh;
+        border-radius: 0;
     }
 }

@@ -63,27 +63,26 @@ function trocarImagem() {
 
     for (let i = 0; i<childrens.length;i++) {
        childrens[i].src = mobileurl[i]
-       console.log(i)
     }
     }   
     else {
     for (let i = 0; i<childrens.length;i++) {
        childrens[i].src = normalurl[i]
-       console.log(i)
     }
     }
 }
-// Chama ao carregar e ao redimensionar a janela
+
 
 window.addEventListener('load', trocarImagem);
 window.addEventListener('resize', trocarImagem);
 
 async function carregarmulher(grid) {
-    let itembase = document.getElementsByClassName("displayitem")[0]
+    let itembase = document.getElementsByClassName("displayitem")[0].cloneNode(true)
     let data = await updateitems()
     console.log(data)
+    grid.innerHTML = ""
     data.map(element => {
-        if (element.genero == "feminino") {
+        if (element.genero == "masculino") {
             carregardisplays(element,grid,itembase)
         }
     })

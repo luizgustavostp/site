@@ -123,41 +123,25 @@
                 <input type="text" name="Cep" id="cep" placeholder="Insira seu cep">
                 <button id="enviar"> Enviar</button>
             </section>
-    <div id="displayhamburguer">
-        <button id="quit"><svg width="32px" height="32px" viewBox="0 0 24 24" fill="#f4f4f4" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg></button>
+                <div id="displayhamburguer">
             <h1> MENU</h1>
         <span id="menunave">
-            <p> <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg > Conta</p>
+            <ul><a id="quit">Voltar ao inicio</a></ul>
             <ul id="no_account">
                 <li><a href="account.html">Criar conta</a></li>
-                <li><a href="account.html?m=login">Fazer login</a></li>
+
+                <li>        
+            <a href="account.html?m=login">Fazer login</a></li>
             </ul>
             <ul id="on_account">
-                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
                 <form action="logout.php" id="logoutform" method="post">
                     <li id="logoutbtn">Sair da conta</li>
                 </form>
-                <li><a href="items_salvos.html">items salvos</a></li>
             </ul>
-            <p> <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                <style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style>
-                </defs>
-                <g id="cart">
-                <circle class="cls-1" cx="10.07" cy="20.59" r="1.91"/>
-                <circle class="cls-1" cx="18.66" cy="20.59" r="1.91"/>
-                <path class="cls-1" d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10"/>
-                <polyline class="cls-1" points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91"/>
-                </g>
-                </svg> Carrinho</p>
             <ul>
-                <li><a href="#">Visualizar carrinho</a></li>
-                <li><a href="#">Adicionar endereço</a></li>
+                <li><a href="carrinho.html">Visualizar carrinho</a></li>
+            <li><a href="perfil.html">Adicionar endereço</a></li>
             </ul>
         </span>
     </div>

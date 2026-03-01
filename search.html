@@ -51,13 +51,13 @@
                     </button>
                 </div>
                 <section id="display-options">
-                    <div id="filter-btn"><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 10.5A3.502 3.502 0 0 0 18.355 8H21a1 1 0 1 0 0-2h-2.645a3.502 3.502 0 0 0-6.71 0H3a1 1 0 0 0 0 2h8.645A3.502 3.502 0 0 0 15 10.5zM3 16a1 1 0 1 0 0 2h2.145a3.502 3.502 0 0 0 6.71 0H21a1 1 0 1 0 0-2h-9.145a3.502 3.502 0 0 0-6.71 0H3z" fill="black"/></svg>Filtro</div>
+                    <div id="filter-btn"><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 10.5A3.502 3.502 0 0 0 18.355 8H21a1 1 0 1 0 0-2h-2.645a3.502 3.502 0 0 0-6.71 0H3a1 1 0 0 0 0 2h8.645A3.502 3.502 0 0 0 15 10.5zM3 16a1 1 0 1 0 0 2h2.145a3.502 3.502 0 0 0 6.71 0H21a1 1 0 1 0 0-2h-9.145a3.502 3.502 0 0 0-6.71 0H3z" ></svg>Filtro</div>
                     <div id="ordenar-btn"><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 12H21M13 8H21M13 16H21M6 7V17M6 17L3 14M6 17L9 14" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 12H21M13 8H21M13 16H21M6 7V17M6 17L3 14M6 17L9 14"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>Ordenar</div> 
                 </section>
             <section id="filterdisplay">
-                <form action="">
+                <form action="" id="filter-form">
                     <h1>Filtro</h1>
                     <input type="text" name="q" id="invisible">
                         <p>Categoria:</p>
@@ -72,26 +72,27 @@
                             <option value="couro">Couro</option>
                             <option value="tropical">Tropical</option>
                             <option value="baunilha">baunilha</option>
-                            <option value="notselected" selected>Não selecionado</option>
+                            <option value="" selected>Não selecionado</option>
                         </select>
                         <p>Gênero:</p>
                         <select name="genero" id="genero">
                             <option value="masculino">Masculino</option>
                             <option value="feminino">Feminino</option>
                             <option value="unissex">Unissex</option>
-                            <option value="notselected" selected>Não selecionado</option>
+                            <option value="" selected>Não selecionado</option>
                         </select>
-                            <p id="maxoprice" >Preço máximo:  300R$</p>
-                                <input type="range" step="5" value="300" name="maxprice" id="maxprice" min="0" max="999">
-                                <p id="minoprice" >Preço minimo:  300R$</p>
-                                <input type="range" step="5" value="300" name="minprice" id="minprice" style="width:100%;" min="0" max="999">
+                            <p id="maxoprice" >Preço máximo:  500R$</p>
+                                <input type="range" step="5" value="500" name="maxprice" id="maxprice" min="0" max="999">
+                                <p id="minoprice" >Preço minimo:  0R$</p>
+                                <input type="range" step="5" value="0" name="minprice" id="minprice" style="width:100%;" min="0" max="999">
+                                <input type="number" name="page" id="page" style="display: none;" value="0">
                                 <button id="filter">Filtrar</button>
                                 <button id="quit-filter-btn"><svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg></button>
                     </form>
                 </section>
-                <section id="categoriafeminina">
+                <section id="categoriafeminina">    
                 <p id="error-msg">Nenhum item foi encontrado.</p>
                 <div id="displayitems" class="gridd">
                     <span class="displayitem">
@@ -105,64 +106,41 @@
                     </span>
                 </div>
                 </section>
+                <span id="nexpage">
+                    <button id="nextpagebtn"><svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+                    xmlns="http://www.w3.org/2000/svg" style="margin: 0;"  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+                    width="24px" height="24px" viewBox="0 0 42 42" xml:space="preserve">
+                <polygon fill-rule="evenodd" points="27.066,1 7,21.068 26.568,40.637 31.502,35.704 16.865,21.068 32,5.933 "/>
+                </svg></button>
+                <p id="antpag"></p>
+                <p id="atualpag" style="color: var(--red-500 );">1</p>
+                <p id="nexpag">2</p>
+                    <button id="antpagebtn"><svg style="scale:-1" version="1.1" baseProfile="tiny" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+                    xmlns="http://www.w3.org/2000/svg" style="margin: 0;"  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+                    width="24px" height="24px" viewBox="0 0 42 42" xml:space="preserve">
+                <polygon fill-rule="evenodd" points="27.066,1 7,21.068 26.568,40.637 31.502,35.704 16.865,21.068 32,5.933 "/>
+                </svg></button>
+                </span>
             </section>
                 <div id="displayhamburguer">
             <h1> MENU</h1>
         <span id="menunave">
-            <ul><a id="quit">
-<svg  xmlns="http://www.w3.org/2000/svg" 
-	 width="16px" height="16px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
-<path d="M48.6,23H15.4c-0.9,0-1.3-1.1-0.7-1.7l9.6-9.6c0.6-0.6,0.6-1.5,0-2.1l-2.2-2.2c-0.6-0.6-1.5-0.6-2.1,0
-	L2.5,25c-0.6,0.6-0.6,1.5,0,2.1L20,44.6c0.6,0.6,1.5,0.6,2.1,0l2.1-2.1c0.6-0.6,0.6-1.5,0-2.1l-9.6-9.6C14,30.1,14.4,29,15.3,29
-	h33.2c0.8,0,1.5-0.6,1.5-1.4v-3C50,23.8,49.4,23,48.6,23z"/>
-</svg>Voltar ao inicio</a></ul>
+            <ul><a id="quit">Voltar ao inicio</a></ul>
             <ul id="no_account">
-                <li><a href="account.html">
-            <svg width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <title/><g id="Complete"><g data-name="add" id="add-2"><g>
-            <line   stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="19" y2="5"/>
-            <line stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="5" x2="19" y1="12" y2="12"/>
-                </g>
-                </g>
-                </g>
-        </svg>Criar conta</a></li>
+                <li><a href="account.html">Criar conta</a></li>
 
                 <li>        
-            <a href="account.html?m=login"><svg width="20px" height="20px" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.86658 8L10.9499 10.5L8.86658 8Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.86658 13L10.9499 10.5L8.86658 13Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9.69995 10.5L3.19995 10.5"  stroke-width="2" stroke-linecap="round"/>
-            <line x1="15.25" y1="17.5" x2="6.25" y2="17.5"  stroke-width="2" stroke-linecap="round"/>
-            <line x1="15.25" y1="3.5" x2="6.25" y2="3.5"  stroke-width="2" stroke-linecap="round"/>
-            <path d="M6.25 17.5V13.5"  stroke-width="2" stroke-linecap="round"/>
-            <path d="M6.25 7.5V3.5"  stroke-width="2" stroke-linecap="round"/>
-            <path d="M15.6 17.5V3.5"  stroke-width="2" stroke-linecap="round"/>
-            </svg>Fazer login</a></li>
+            <a href="account.html?m=login">Fazer login</a></li>
             </ul>
             <ul id="on_account">
-                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
                 <form action="logout.php" id="logoutform" method="post">
                     <li id="logoutbtn">Sair da conta</li>
                 </form>
-                <li><a href="items_salvos.html">items salvos</a></li>
             </ul>
             <ul>
-                <li><a href="#"><svg id="viw" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 11V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V10.9673M10.4 21H13.6C15.8402 21 16.9603 21 17.816 20.564C18.5686 20.1805 19.1805 19.5686 19.564 18.816C20 17.9603 20 16.8402 20 14.6V12.2C20 11.0799 20 10.5198 19.782 10.092C19.5903 9.71569 19.2843 9.40973 18.908 9.21799C18.4802 9 17.9201 9 16.8 9H7.2C6.0799 9 5.51984 9 5.09202 9.21799C4.71569 9.40973 4.40973 9.71569 4.21799 10.092C4 10.5198 4 11.0799 4 12.2V14.6C4 16.8402 4 17.9603 4.43597 18.816C4.81947 19.5686 5.43139 20.1805 6.18404 20.564C7.03968 21 8.15979 21 10.4 21Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>Visualizar carrinho</a></li>
-                            <li><a href="#"><svg fill-rule="evenodd" color="white"height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                viewBox="0 0 490 490" xml:space="preserve">
-            <g>
-            <path d="M245.001,0C156.458,0,84.424,71.987,84.424,160.472c0,85.04,145.93,315.146,152.142,324.9
-                c1.836,2.882,5.017,4.628,8.435,4.628c3.418,0,6.599-1.746,8.434-4.628c6.212-9.754,152.141-239.861,152.141-324.9
-                C405.576,71.987,333.542,0,245.001,0z M245.001,461.127c-13.207-21.363-40.009-65.587-66.549-114.588
-                c-48.429-89.418-74.027-153.758-74.027-186.067C104.424,83.015,167.487,20,245.001,20c77.514,0,140.575,63.015,140.575,140.472
-                c0,32.309-25.599,96.649-74.027,186.067C285.009,395.539,258.207,439.764,245.001,461.127z"/>
-            <path d="M244.999,76.071c-41.884,0-75.959,33.149-75.959,73.894c0,40.744,34.075,73.891,75.959,73.891s75.959-33.147,75.959-73.891
-                C320.958,109.22,286.883,76.071,244.999,76.071z M244.999,203.855c-30.855,0-55.959-24.175-55.959-53.891
-                c0-29.717,25.104-53.894,55.959-53.894s55.959,24.177,55.959,53.894C300.958,179.68,275.855,203.855,244.999,203.855z"/>
-        </g>
-        </svg>Adicionar endereço</a></li>
+                <li><a href="carrinho.html">Visualizar carrinho</a></li>
+            <li><a href="perfil.html">Adicionar endereço</a></li>
             </ul>
         </span>
     </div>

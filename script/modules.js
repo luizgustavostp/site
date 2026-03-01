@@ -1,24 +1,25 @@
 export async function updateitems() {
-    try {
-        const response = await fetch("http://localhost/site/produtos.php");
-        const data = await response.json();
-        console.log("fodase")
-        localStorage.setItem("catalog", JSON.stringify(data));
-        console.log("fodase2")
-
-        return data; // ← AGORA SIM
-    } catch (erro) {
-        console.error(erro);
-        return []; // evita quebrar o app
+    if (!localStorage.getItem("catalog")) {
+        try {
+            const response = await fetch("api/produtos.php");
+            const data = await response.json();
+            localStorage.setItem("catalog", JSON.stringify(data));
+            return data;
+        } catch (erro) {
+            console.error(erro);
+            return [];
+        }
+        }
+    else {
+        return JSON.parse(localStorage.getItem("catalog"))
     }
 }
 export async function displayupdate(btn1,btn2,displayurl) {
     let hamburguerbtn = document.getElementById(btn1)
     let quitbtn = document.getElementById(btn2)
     let blur = document.getElementById("blur")
-    console.log("antes da fetch")
     let logged
-    const me = await fetch("me.php").then(res => res.json()).then(res => {
+    const me = await fetch("api/me.php").then(res => res.json()).then(res => {
         if (res.logged) {
             document.querySelector("#no_account").style.display = "none"
             document.querySelector("#on_account").style.display = "block"
@@ -71,7 +72,6 @@ export function carregardisplays(element,grido,itembase) {
     newitem.addEventListener("click",() => {
         window.location = `item.html?id=${element.id}`
     })
-    console.log(itembasechild)
     grido.appendChild(newitem)
 }
 
@@ -79,13 +79,14 @@ export function ativarmenuconfig(displayid,btn1,btn2) {
     function mudarwall() {
     const blur = document.querySelector("#blur")
     let filterdisplay = document.getElementById(displayid)
-    console.log(filterdisplay)
     let displaystyle = window.getComputedStyle(filterdisplay).display
     if (displaystyle == "none") {
+        blur.style.display = "block"
         blur.style.visibility = "visible"
         filterdisplay.style.display = "block"
     }
     else {
+        blur.style.display = "none"
         blur.style.visibility = "hidden"
         filterdisplay.style.display = "none"
     }
@@ -98,17 +99,11 @@ export function ativarmenuconfig(displayid,btn1,btn2) {
     })
 }
 export function erro(msg,vis,el) {
-    console.log("consola")
     const blurr = document.getElementById("blur")
     el.style.display = "flex"
     blurr.style.visibility = "visible"
-    console.log("chegou1")
     document.querySelector("#errormsg").textContent = msg
     document.querySelector("#errormsgs").textContent = msg
     el.style.visibility = vis
-    console.log("chegou2")
-    el.style.animationName = "dismsg"
-    el.style.animationDuration = "0.4s"
-    el.style.animationTimingFunction = "ease"
-    console.log("chegou3 ")
+
 }

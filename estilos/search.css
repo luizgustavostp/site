@@ -1,3 +1,13 @@
+main {
+    background-color: #f7f7f7 !important;
+    min-height: fit-content;
+    max-height: fit-content;
+    height: fit-content;
+    overflow-y: visible;
+}
+body {
+    height: fit-content !important;
+}
 #display-options {
     display: grid;
     width: 100%;
@@ -81,9 +91,7 @@
     color: white;
     border: 1px solid transparent;
 }
-main {
-    padding-top: 12px;
-}
+
 svg {
     margin: 0;
 }
@@ -106,7 +114,7 @@ svg {
     flex-direction: column;
     transform: translate(-50%,-50%);
     z-index: 5;
-    background-color: white;
+    background-color: #f7f7f7;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     h1 {
         align-self: center;
@@ -216,7 +224,7 @@ option:hover {
     display: flex;
 }
 #displayitems {
-    width: fit-content;
+    margin-bottom: 0 !important;
 } 
 @media (max-width:1260px) {
     #divisao {
@@ -284,16 +292,60 @@ option:hover {
     #divo1 {
         margin-bottom: 12px;
     }
-    #displayitems {
-        margin-top:16px;
-    }
 }
 #categoriafeminina {
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    width: 100% !important;
+    padding-top: 16px;
+    padding-bottom: 32px;
+    transform: translateY(0);
 }
 #error-msg {
     display: none;
+}
+#filter-btn {
+    transition: 100ms;
+    svg {
+        fill: black;
+    }
+    &:hover {
+        background-color: var(--red-400) !important;
+        color: white;
+        svg {
+            fill: white;
+        }
+    }
+}
+#ordenar-btn {
+    transition: 100ms;
+    svg {
+        stroke: black;
+    }
+    &:hover {
+        background-color: var(--red-400) !important;
+        color: white;
+        svg {
+            stroke: white;
+        }
+    }
+}
+#nexpage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    button {
+        cursor:default;
+        &:hover {
+            background-color: var(--red-400);
+            svg {
+                fill: white;
+            }
+        }
+    }
+    p {
+        color: var(--gray-500);
+        font-size: 16px;
+    }
+    svg {
+        margin: 0 !important;
+    }
 }

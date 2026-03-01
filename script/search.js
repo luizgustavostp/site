@@ -1,97 +1,122 @@
-import { displayupdate } from "./modules.js"
-import { carregardisplays } from "./modules.js"
-import { ativarmenuconfig} from "./modules.js"
+import { displayupdate, updateitems, carregardisplays, ativarmenuconfig} from "./modules.js"
 
-const grid = document.querySelector("div#displayitems")
-let label = document.getElementById("label")
+const grid         = document.querySelector("div#displayitems")
 const errordisplay = document.getElementById("error")
-const errormsg = document.getElementById("errormsg")
+const errormsg     = document.getElementById("errormsg")
+const params   = new URLSearchParams(window.location.search)
 
 
-
-async function carregarsearch(grid) {
-    const params = new URLSearchParams(window.location.search)
-    let termo = params.get("q")
-    const genero = params.get("genero")
-    const categoria = params.get("categoria")
-    const maxprice = params.get("maxprice")
-    const minprice = params.get("minprice")
-    document.querySelector("#maxprice").value = maxprice
-    document.querySelector("#minprice").value = minprice
-    document.querySelector("#maxoprice").textContent = `Preço máximo: ${document.querySelector("#maxprice").value}R$`
-    document.querySelector("#minoprice").textContent = `Preço minimo: ${document.querySelector("#minprice").value}R$`
-    document.querySelector("input#invisible").value = termo 
-    termo = termo.toLowerCase();
-    let itembase = document.getElementsByClassName("displayitem")[0]
-    let catalog = JSON.parse(localStorage.getItem("catalog"))
-    if (catalog) {
-        console.log("Catalogo OK!")
-    }
-    else {
-        await fetch("produtos.php").then(catalogo => catalogo.json()).then(catalogo => {
-        catalog = catalogo
-    })
-    }
-    catalog.map(item => {
-        let cat = false
-        let gen = false
-        let price = false
-        let mprice = false
-        if (item.name.toLowerCase().includes(termo)) {
-            if (item.category == categoria || item.category2 == categoria || item.category3 == categoria || categoria == "notselected" || categoria == null) {
-                cat = true
+let url        = window.location.search
+let itembase   = document.getElementsByClassName("displayitem")[0].cloneNode(true)
+let foundItems = []
+let page       = [0]
+let len = [8]
+async function carregarsearch() {
+    const catalog = await updateitems() 
+    catalog.forEach(item => {
+        let can = true
+        params.forEach((value,key) => {
+            if (key == "name" || key == "genero") {
+                if (item[key] != value && value.length != 0) {
+                    can = false
+                    console.log("name invalid")
+                }
             }
-            if (item.genero == genero || genero == "notselected" || genero == null) {
-                gen = true
+            if (key == "categoria") {
+                if (item["category1"] != value && item["category2"] != value && item["category3"] != value && value.length != 0) {
+                    can = false
+                    console.log("categoria invalid")
+                }
             }
-            if (item.price <= parseInt(maxprice) || parseInt(maxprice) == 0  || maxprice == null) {
-                price = true
+            if (key == "maxprice") {
+                if (item["price"] >= parseInt(value)) {
+                    can = false
+                    console.log("maxprice invalid")
+                }
             }
-            if (item.price >= parseInt(minprice) || parseInt(minprice) == 0 || maxprice == null) {
-                mprice = true
+            if (key == "minprice") {
+                if (item["price"] <= parseInt(value)) {
+                    can = false
+                    console.log("minprice invalid")
+                }
             }
-            console.log(genero,categoria,maxprice)
-            if (cat&&gen&&price&&mprice) {
-                carregardisplays(item,grid,itembase)
-            }
-         }
         })
+        if (can) { 
+            foundItems.push(item)
+        }
+        })
+    return foundItems
+}
+
+async function RenderItemsForPages(array) {
+    let arr = array;
+    let length  = (page[0] * 8) + 8
+    len[0] = arr.length
+    console.log(page[0])
+    grid.innerHTML = ""
+    let itemI
+    if (page[0] > 0 || (page[0] * 8) + 8 > arr.length ) {
+        length = arr.length
     }
+    console.log(length)
+    console.log(page[0] * 8)
+    for (let i = (page[0] * 8); i < length; i++) {
+        itemI = arr[i]
+        carregardisplays(itemI,grid,itembase)
+    }
+}
+
+document.querySelector("#maxprice").value = params.get("maxprice") != null ? parseInt(params.get("maxprice")) : 500
+document.querySelector("#minprice").value = params.get("minprice") != null ? parseInt(params.get("minprice")) : 0  
+
+document.querySelector("#maxoprice").textContent = `Preço máximo: ${document.querySelector("#maxprice").value}R$`
+document.querySelector("#minoprice").textContent = `Preço minimo: ${document.querySelector("#minprice").value}R$`
+
+
 document.querySelector("#maxprice").addEventListener("input",() => {
     document.querySelector("#maxoprice").textContent = `Preço máximo: ${document.querySelector("#maxprice").value}R$`
 })
 document.querySelector("#minprice").addEventListener("input",() => {
     document.querySelector("#minoprice").textContent = `Preço minimo: ${document.querySelector("#minprice").value}R$`
 })
-carregarsearch(grid)
+
+let arr = await carregarsearch()
+RenderItemsForPages(arr)
 displayupdate("hamburguer","quit","displayhamburguer")
-
-
 ativarmenuconfig("filterdisplay","filter-btn","quit-filter-btn")
 
 
 const ordenate = document.getElementById("ordenar-btn")
-let ord = 0
-ordenate.addEventListener("click",() => {
-    if (ord == 0) {
-    let grid = document.getElementById("displayitems")
-    let gridc = document.getElementById("displayitems").children
-    const ordenado = Array.from(gridc).sort((a, b) =>
-    a.textContent.localeCompare(b.textContent, 'pt-BR')
-    );
-    grid.innerHTML = ""
-    ordenado.forEach(element => {
-        grid.appendChild(element)
-    });
-    ord++
-    }
-    else if (ord == 1) {
-        let grid = document.getElementById("displayitems")
-        let gridc = document.getElementById("displayitems").children
-        const ordenado = Array.from(gridc).sort((a, b) =>
-        a.textContent.localeCompare(b.textContent, 'pt-BR'))
-    }
+
+ordenate.addEventListener("click",async () => {
+    const ordenado = arr.sort((a, b) =>
+        a.name.localeCompare(b.name, 'pt-BR'))
+    RenderItemsForPages(ordenado)
 })
-document.getElementById("submibtn").addEventListener("click",() => {
-    window.location = `search.html?q=${document.getElementById("pesq").value}`
+
+document.getElementById("nextpagebtn").addEventListener("click",() => {
+    adicionarpage(false)
 })
+document.getElementById("antpagebtn").addEventListener("click",() => {
+    adicionarpage(true)
+})
+
+document.getElementById("filter-form").addEventListener("click",event => {
+    event.preventDefault()
+})
+
+document.getElementById("filter").addEventListener("click",()=> {
+    document.getElementById("filter-form").submit()
+})
+
+function adicionarpage(bool) {
+    if (bool && (len[0] - ((page[0] * 8) + 8)) > 0) {
+        page[0] = page[0] + 1
+    }
+    else if (!bool && page[0] > 0) {
+        page[0] = page[0] - 1
+        console.log("dimiu")
+    }
+    console.log(page)
+    RenderItemsForPages(arr)
+}
