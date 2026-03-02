@@ -1,7 +1,7 @@
 export async function updateitems() {
     if (!localStorage.getItem("catalog")) {
         try {
-            const response = await fetch("api/produtos.php");
+            const response = await fetch("produtos.php");
             const data = await response.json();
             localStorage.setItem("catalog", JSON.stringify(data));
             return data;
@@ -19,7 +19,7 @@ export async function displayupdate(btn1,btn2,displayurl) {
     let quitbtn = document.getElementById(btn2)
     let blur = document.getElementById("blur")
     let logged
-    const me = await fetch("api/me.php").then(res => res.json()).then(res => {
+    const me = await fetch("me.php").then(res => res.json()).then(res => {
         if (res.logged) {
             document.querySelector("#no_account").style.display = "none"
             document.querySelector("#on_account").style.display = "block"

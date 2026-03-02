@@ -123,7 +123,7 @@ document.getElementById("create").addEventListener("submit", async (event) => {
             console.log("enviando fetch")
             carregando.style.display = "flex"
             console.log("antesdafetch ")
-            await fetch("api/createaccount.php", {
+            await fetch("createaccount.php", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json"
@@ -160,7 +160,7 @@ document.getElementById("login").addEventListener ("submit",async (event) => {
     let senhainput = document.getElementById("senha").value
     console.log(emailinput,senhainput)
     carregando.style.display = "flex"
-    await fetch("api/login.php", {
+    await fetch("login.php", {
         method: "POST",
         headers: {"Content-Type": "Application/json"},
         body: JSON.stringify({

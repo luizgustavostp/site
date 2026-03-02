@@ -4,7 +4,7 @@ async function loadcarrinho() {
     let tot = 0
     let productinfo = JSON.parse(localStorage.getItem("catalog"))
     if (!productinfo) {
-        const response = await fetch("http://localhost/site/produtos.php");
+        const response = await fetch("produtos.php");
         const data = await response.json();
         productinfo = data
     }
