@@ -144,3 +144,6 @@ document.getElementById("voltar").addEventListener("click",() => {
 document.getElementById("gerenciar-endereco-apagar").addEventListener("click",() => { 
     document.getElementById("adicionar-endereco").style.display = "flex"
 })
+document.getElementById("itemlogo").addEventListener("click",()=> {
+    window.location = "index.html"
+})

@@ -17,7 +17,7 @@ async function carregarsearch() {
         let can = true
         params.forEach((value,key) => {
             if (key == "name" || key == "genero") {
-                if (item[key] != value && value.length != 0) {
+                if (!item[key].toLowerCase().includes(value.toLowerCase()) && value.length != 0) {
                     can = false
                     console.log("name invalid")
                 }
@@ -41,14 +41,21 @@ async function carregarsearch() {
                 }
             }
         })
+
         if (can) { 
             foundItems.push(item)
         }
         })
+    if (foundItems.length == 0) {
+    document.getElementById("error-msg").style.display = "block"
+    }
+    console.log("Length dos found items: ",foundItems.length)
+    console.log(foundItems)
     return foundItems
 }
 
 async function RenderItemsForPages(array) {
+
     let arr = array;
     let length  = (page[0] * 8) + 8
     len[0] = arr.length
@@ -64,6 +71,9 @@ async function RenderItemsForPages(array) {
         itemI = arr[i]
         carregardisplays(itemI,grid,itembase)
     }
+    document.getElementById("atualpag").textContent = page[0] + 1
+    document.getElementById("antpag").textContent = page[0] == 0 ? "" : page[0]
+    document.getElementById("nexpag").textContent = arr.length - length ? page[0] + 2 : ""
 }
 
 document.querySelector("#maxprice").value = params.get("maxprice") != null ? parseInt(params.get("maxprice")) : 500
@@ -120,3 +130,10 @@ function adicionarpage(bool) {
     console.log(page)
     RenderItemsForPages(arr)
 }
+
+document.getElementById("submibtn").addEventListener("click", () => {
+    window.location = `search.html?name=${document.getElementById("pesq").value}`
+})
+document.getElementById("itemlogo").addEventListener("click",()=> {
+    window.location = "index.html"
+})

@@ -57,8 +57,8 @@ caroselesquerda.addEventListener("click",async () => {
 })
 function trocarImagem() {
     const childrens = document.getElementById("carrosel").children
-    const mobileurl = ["./imgs/lataffa-mobile.webp",'./imgs/banoffi-mobile.webp','./imgs/vulcan-mobile.webp','./imgs/jubilant-mobile.webp',"./imgs/lataffa-mobile.webp"]
-    const normalurl = ["./imgs/lataffa-banner(satured.webp",'./imgs/banoffi.webp','./imgs/vulcan-banner.webp','./imgs/jubilant-noir.webp',"./imgs/lataffa-banner(satured.webp"]
+    const mobileurl = ["./imgs/lataffa-mobile.png",'./imgs/banoffi-mobile.png','./imgs/vulcan-mobile.png','./imgs/jubilant-mobile.png',"./imgs/lataffa-mobile.png"]
+    const normalurl = ["./imgs/lataffa-banner(satured.png",'./imgs/banoffi.png','./imgs/vulcan-banner.png','./imgs/jubilant-noir.png',"./imgs/lataffa-banner(satured.png"]
     if (window.innerWidth <= 550) {
 
     for (let i = 0; i<childrens.length;i++) {
@@ -91,3 +91,6 @@ carregarmulher(grid)
 displayupdate("hamburguer","quit","displayhamburguer")
 document.getElementById("carregando").style.display = "none"
 document.getElementById("carregando").style.visibility = "hidden"
+document.getElementById("itemlogo").addEventListener("click",()=> {
+    window.location = "index.html"
+})

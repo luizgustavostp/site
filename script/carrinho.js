@@ -66,3 +66,6 @@ function apagar(element,cart) {
     localStorage.setItem("cart",JSON.stringify(cart))
     window.location.reload()
 }
+document.getElementById("itemlogo").addEventListener("click",()=> {
+    window.location = "index.html"
+})

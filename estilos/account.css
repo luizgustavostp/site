@@ -5,12 +5,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    background-color: white !important;
+}
 .formulario {
     gap: 4px;
     max-width: 800px;
     min-width: 600px;
     padding: 24px;
-    background-color: var(--gray-100);
     border-radius: 24px;
     flex-direction: column;
     position: absolute;
@@ -37,11 +39,12 @@
         width: 100%;
         min-height: 44px;
         padding: 16px;
+        padding-left: 12px;
         border-radius: 20px;
         border: none;
         font-size: 16px;
         position: relative;
-        background-color: var(--gray-300);
+        background-color: var(--gray-100);
     }
     input::placeholder {
         color: var(--gray-500);
@@ -50,7 +53,7 @@
     input:-webkit-autofill:hover,
     input:-webkit-autofill:active,
     input:-webkit-autofill:focus {
-        -webkit-box-shadow: 0 0 0 1000px var(--gray-300) inset !important;
+        -webkit-box-shadow: 0 0 0 1000px var(--gray-100) inset !important;
         -webkit-text-fill-color: #000 !important;
         transition: background-color  5000s ease-in-out 0s;
     }
@@ -63,7 +66,7 @@
     input[type="submit"] {
         border-radius: 28px;
         min-height: 48px;
-        padding: 16px 24px;
+        padding: 16px 12px;
         margin-top: 24px;
         background-color: var(--red-600);
         color: white;
@@ -83,8 +86,9 @@
 
     }
     .formin {
-        background-color: var(--gray-300);
-        padding: 0 32px;
+        background-color: var(--gray-100);
+        padding: 0 24px;
+        border-radius: 24px;
         width: 90%;
         display: flex;
         align-items: center;
@@ -207,4 +211,7 @@ main,body {
         min-height: 100vh;
         border-radius: 0;
     }
+}
+#bmvnd {
+    margin-bottom: 8px;
 }

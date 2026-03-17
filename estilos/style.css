@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@font-face {
+    font-family: "Fonts";
+    src: url("../fonts/RedHatDisplay-Variable.ttf");
+}
 body {
     height: 100dvh;
 }
@@ -7,7 +10,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins";
+    font-family: "Fonts";
     user-select: none;
     color: var(--black);
     user-select: none;
@@ -295,8 +298,7 @@ html {
 }
 #tittlefeminino {
     margin-top: 48px;
-    font-family: serif;
-    font-size: 44px !important;
+    font-size: 32px !important;
     color: var(--red-500);
 }
 #titlefemele {
@@ -361,7 +363,6 @@ form {
         margin: 14px auto;
     }
     h2 {
-        font-family: "arial";
         font-size: 24px; 
         font-weight: 200;
         text-align: start;
@@ -388,7 +389,7 @@ form {
 
     }
     a {
-        transform: translateY(180%);
+        transform: translateY(200%);
         button {
             z-index: 100;
             font-weight: 500;
@@ -824,6 +825,7 @@ main {
             transform: translateY(-8px);
         } 
         a {
+            transform: translateY(90px);
             button {
                 transform: translateY(-12px);
                 border-radius: 16px;
@@ -871,7 +873,8 @@ img {
     h1 {
         line-height: 1.2em;
         color: var(--red-400);
-        font-size: 24px;
+        font-size: 32px;
+        margin-bottom: 8px;
     }
     p {
         font-size: 16px;

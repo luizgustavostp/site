@@ -300,6 +300,10 @@ option:hover {
 }
 #error-msg {
     display: none;
+    height: 100vh;
+    font-size: 24px;
+    margin-top:208px;
+    color: var(--gray-500);
 }
 #filter-btn {
     transition: 100ms;

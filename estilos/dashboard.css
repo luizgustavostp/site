@@ -174,7 +174,7 @@ section {
     }
     button {
         width: 100%;
-        background-color: black;
+        background-color: var(--red-600);
         color: white;
         font-size: 16px;
         font-weight: 500;

@@ -183,6 +183,12 @@ document.getElementById("login").addEventListener ("submit",async (event) => {
         }
     })
 })
+document.getElementById("voltarbtnn").addEventListener("click", () => {
+    window.location = "index.html"
+})
 document.getElementById("voltarbtn").addEventListener("click", () => {
+    window.location = "index.html"
+})
+document.getElementById("itemlogo").addEventListener("click",()=> {
     window.location = "index.html"
 })

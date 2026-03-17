@@ -116,3 +116,6 @@ okbtn.addEventListener("click",() => {
 })
 
 displayupdate("hamburguer","quit","displayhamburguer")
+document.getElementById("itemlogo").addEventListener("click",()=> {
+    window.location = "index.html"
+})
